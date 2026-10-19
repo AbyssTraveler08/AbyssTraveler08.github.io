@@ -68,6 +68,39 @@ nav a:focus-visible,.btn:focus-visible,.quick-card:focus-visible{outline:3px sol
 .quick-card:nth-child(3) .quick-icon{background:#eef7f0;color:#367451}
 .quick-card:nth-child(4) .quick-icon{background:#fbf1f0;color:#a9504b}
 
+
+/* Warm, editorial accents for the personal and academic parts of the portfolio */
+.intro{position:relative;background:linear-gradient(115deg,#f8f4ed 0%,#f6f8fb 58%,#edf3f7 100%);border:1px solid #e8e5de;border-radius:24px;padding:62px 48px 44px;margin-top:28px;margin-bottom:28px}
+.intro .eyebrow{color:#8b6b43}
+.intro h1 span{color:#426d78}
+.intro .availability{background:#f3eee4;border-color:#e6dccb;color:#66543b}
+.intro .availability:before{background:#a9854f}
+.intro .btn.primary{background:#426d78;border-color:#426d78}
+.intro .btn.primary:hover{background:#345962}
+.intro .btn:not(.primary){background:rgba(255,255,255,.78)}
+/* How I work: soft sand and teal accents, separate from the red/blue team palette */
+#about .card:first-child{--accent:#a47b4b;--wash:#f8f2e8;--border:#e9deca}
+#about .card:last-child{--accent:#477d80;--wash:#edf5f3;--border:#d4e6e2}
+#about .card .icon-box{background:var(--wash);border-color:var(--border);color:var(--accent)}
+#about .card .mini-label{color:var(--accent)}
+#about .card .chips span{background:var(--wash);border-color:var(--border);color:#4f5d60}
+/* Education, leadership and work history use calm academic/editorial tones */
+.timeline-card:nth-child(1){--accent:#6f8291;--wash:#f0f3f5;--border:#dce3e8}
+.timeline-card:nth-child(2){--accent:#a47b4b;--wash:#f8f2e8;--border:#e9deca}
+.timeline-card:nth-child(3){--accent:#477d80;--wash:#edf5f3;--border:#d4e6e2}
+.timeline-card:nth-child(4){--accent:#8a718c;--wash:#f5f0f5;--border:#e4d9e5}
+/* Contact and resume: warm neutral + teal, not security-team colors */
+.contact-card:first-child{--accent:#a47b4b;--wash:#f8f2e8;--border:#e9deca}
+.contact-card:last-child{--accent:#477d80;--wash:#edf5f3;--border:#d4e6e2}
+.resume-panel{border-top:3px solid #a9854f;background:linear-gradient(120deg,#f8f2e8 0%,#fff 78%)}
+.pdf-icon{background:#f3e8d5;color:#8b6b43}
+.quick-card:nth-child(3) .quick-icon{background:#edf5f3;color:#477d80}
+.quick-card:nth-child(4) .quick-icon{background:#f8f2e8;color:#a47b4b}
+/* Small repeated details create a cohesive visual system without adding visual noise */
+.timeline-card .timeline-date{color:var(--accent)}
+.timeline-card .mini-label{color:var(--accent)}
+@media(max-width:620px){.intro{padding:38px 22px 28px;margin-top:16px;border-radius:18px}}
+
 </style>
 </head>
 <body>
