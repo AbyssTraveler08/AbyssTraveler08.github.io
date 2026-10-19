@@ -115,8 +115,10 @@ nav a:focus-visible,.btn:focus-visible,.quick-card:focus-visible{outline:3px sol
 
 /* Scroll-reveal cards: enter the viewport, and gently reset when scrolled away */
 @media (prefers-reduced-motion: no-preference){
-  .reveal-card{opacity:0;transform:translateY(22px);transition:opacity .55s ease,transform .55s cubic-bezier(.2,.7,.2,1);will-change:opacity,transform}
-  .reveal-card.is-visible{opacity:1;transform:translateY(0)}
+  .reveal-card{opacity:0;transform:translateX(-34px) scale(.985);transition:opacity .55s ease,transform .6s cubic-bezier(.2,.7,.2,1);will-change:opacity,transform}
+  .reveal-card.is-visible{opacity:1;transform:translateX(0) scale(1)}
+  .reveal-card:nth-child(even){transform:translateX(34px) scale(.985)}
+  .reveal-card:nth-child(even).is-visible{transform:translateX(0) scale(1)}
   .reveal-card.reveal-reset{transition-duration:.38s}
 }
 @media (prefers-reduced-motion: reduce){
