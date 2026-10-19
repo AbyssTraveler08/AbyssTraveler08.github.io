@@ -1,168 +1,74 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#f5f0e7"><meta name="description" content="Amar Kant Yadav — cybersecurity portfolio across SOC, VAPT, Python, Linux and security automation."><title>Amar Kant Yadav | Cybersecurity Portfolio</title><style>
-:root{--bg:#f5f0e7;--paper:#fffdf8;--ink:#192e2a;--muted:#66736b;--green:#176b52;--lime:#d7ed75;--orange:#d66c45;--line:#dedfd3;--shadow:0 18px 45px rgba(25,46,42,.09);color-scheme:light}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:88px}
-body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.75 Inter,"Segoe UI",system-ui,sans-serif}
-a{color:var(--green);text-decoration:none;transition:color .2s,transform .2s}
-a:hover{color:var(--orange)}
-header{position:sticky;top:0;z-index:10;display:flex;align-items:center;justify-content:space-between;gap:24px;padding:17px max(5vw,22px);background:rgba(245,240,231,.93);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
-.brand{color:var(--ink);font-size:13px;font-weight:850;letter-spacing:-.02em}
-.brand b{color:var(--orange)}
-nav{display:flex;flex-wrap:wrap;gap:22px;font-size:11px;font-weight:800;letter-spacing:.08em}
-nav a{color:var(--muted)}
-.wrap{width:min(1120px,90%);margin-inline:auto}
-.hero{display:grid;grid-template-columns:1.12fr .88fr;gap:55px;align-items:center;padding:88px 0 82px;min-height:600px}
-.eyebrow,.label,.mono{color:var(--green);font-size:11px;font-weight:850;letter-spacing:.14em;text-transform:uppercase}
-h1{font-size:clamp(44px,6.4vw,80px);line-height:.99;letter-spacing:-.075em;margin:22px 0 25px;font-weight:850;max-width:700px}
-h1 span,h2 span{color:var(--green)}
-.lead{max-width:630px;color:var(--muted);font-size:18px;line-height:1.85}
-.availability{display:block;width:fit-content;max-width:100%;margin:22px 0;padding:11px 15px;border:1px solid #cddcb0;border-radius:12px;background:#eef4d9;color:#25462f;font-size:13px;line-height:1.6}
-.availability span{color:var(--orange);margin-right:7px}
-.actions{display:flex;flex-wrap:wrap;gap:11px;margin:25px 0}
-.btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 19px;border:1px solid var(--ink);border-radius:7px;background:transparent;color:var(--ink);font-size:13px;font-weight:800;transition:transform .2s,box-shadow .2s}
-.btn:hover{transform:translateY(-2px);box-shadow:var(--shadow)}
-.btn.primary,.primary{background:var(--green);color:#fff;border-color:var(--green)}
-.btn.primary:hover,.primary:hover{background:#104d3c;color:#fff}
-.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
-.tags span,.pill{border:1px solid var(--line);border-radius:5px;padding:6px 10px;background:var(--paper);color:var(--muted);font-size:10px;font-weight:800;letter-spacing:.04em}
-.console{position:relative;overflow:hidden;padding:30px;border-radius:18px;background:var(--ink);color:#f8f5eb;box-shadow:0 25px 55px rgba(25,46,42,.18);transform:rotate(1deg)}
-.console:after{content:"";position:absolute;width:190px;height:190px;border-radius:50%;right:-80px;bottom:-95px;background:rgba(215,237,117,.12)}
-.console-head{display:flex;justify-content:space-between;gap:15px;padding-bottom:17px;border-bottom:1px solid #39534b;color:#e7eadf;font-size:10px;font-weight:850;letter-spacing:.1em}
-.online{color:var(--lime)}
-.terminal{position:relative;padding:21px 0 8px;color:#d7e0d5;font-size:14px;line-height:2}
-.terminal span{color:var(--lime);font-weight:850}
-.stats{display:grid;grid-template-columns:1fr 1fr;gap:11px;margin-top:18px}
-.stat{padding:17px;border:1px solid #39534b;border-radius:10px;background:#223b34}
-.stat small{display:block;color:#bdcfc3;font-size:9px;font-weight:850;letter-spacing:.08em}
-.stat strong{display:block;color:var(--lime);font-size:25px;font-weight:850;letter-spacing:-.05em}
-section{padding:80px 0;border-top:1px solid var(--line)}
-.section-head{display:flex;gap:22px;margin-bottom:35px}
-.num{min-width:35px;padding-top:8px;color:var(--orange);font-size:11px;font-weight:850;letter-spacing:.08em}
-h2{margin:4px 0 14px;font-size:clamp(31px,4.4vw,49px);line-height:1.08;letter-spacing:-.06em;font-weight:850}
-h3{margin:8px 0 10px;font-size:21px;line-height:1.3;letter-spacing:-.035em}
-.muted,.card p,.timeline p{color:var(--muted)}
-.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
-.card{padding:27px;border:1px solid var(--line);border-radius:13px;background:var(--paper);box-shadow:0 5px 18px rgba(25,46,42,.025);transition:transform .22s,box-shadow .22s,border-color .22s}
-.card:hover{transform:translateY(-4px);border-color:#a9c6a5;box-shadow:var(--shadow)}
-.card p{line-height:1.8}
-.card.feature{background:var(--lime);border-color:var(--lime)}
-.card.feature p{color:#3f5035}
-.card.feature .label{color:#37553a}
-.chips{display:flex;flex-wrap:wrap;gap:7px;margin:14px 0}
-.chips span{padding:5px 9px;border-radius:5px;background:#e8eee3;color:#28513e;font-size:10px;font-weight:800}
-.feature .chips span{background:rgba(255,255,255,.55)}
-.timeline article{display:grid;grid-template-columns:150px 1fr;gap:25px;padding:25px 0;border-bottom:1px solid var(--line)}
-.date{padding-top:6px;color:var(--green);font-size:11px;font-weight:850}
-.resume{display:flex;align-items:center;justify-content:space-between;gap:22px;padding:24px;border:1px solid var(--line);border-radius:13px;background:var(--paper)}
-.resume-card{display:flex;align-items:center;gap:16px}
-.pdf{display:flex;align-items:center;justify-content:center;width:55px;height:62px;flex-shrink:0;border-radius:8px;background:var(--green);color:#fff;font-size:12px;font-weight:850}
-.resume-card small{display:block;color:var(--muted)}
-.contact{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-.contact .card{background:var(--paper)}
-.contact a{display:block;width:fit-content;margin:9px 0;font-weight:700}
-.fine{font-size:12px;color:var(--muted)}
-footer{padding:27px 0;border-top:1px solid var(--line);color:var(--muted);font-size:11px;font-weight:750;letter-spacing:.04em}
-@media(max-width:760px){header{align-items:flex-start;flex-direction:column;gap:12px}nav{gap:10px 16px}.hero{grid-template-columns:1fr;gap:35px;padding:56px 0;min-height:0}.console{transform:none;padding:22px}.grid,.contact{grid-template-columns:1fr}.timeline article{grid-template-columns:1fr;gap:4px}.resume{align-items:flex-start;flex-direction:column}section{padding:57px 0}h1{font-size:clamp(42px,12vw,62px)}}
-@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;transition:none!important}}
-
-/* Portfolio content hierarchy and credential cards */
-#skills .card,#certifications .card{min-height:205px}
-#skills .card .label,#certifications .card .label{font-size:10px;letter-spacing:.12em}
-#certifications .card.feature{background:var(--lime)}
-#certifications .fine{margin-top:22px;max-width:800px}
-nav{gap:14px}
-@media(max-width:900px){nav{gap:10px 14px}}
-
-/* Editorial portfolio layout: open, typography-led, and project-focused */
-.skill-list{border-top:1px solid var(--line)}
-.skill-row{display:grid;grid-template-columns:52px minmax(190px,.8fr) minmax(0,1.2fr);gap:24px;padding:31px 0;border-bottom:1px solid var(--line);align-items:start}
-.skill-index{font-size:13px;font-weight:850;color:var(--orange);padding-top:5px}
-.skill-name h3{font-size:25px;margin:6px 0 8px}
-.skill-name p,.skill-detail p{font-size:14px;color:var(--muted);margin:0;line-height:1.75}
-.skill-detail .chips{margin:0 0 12px}
-.skill-detail .chips span{background:transparent;border:1px solid var(--line);padding:7px 10px;font-size:11px;color:var(--ink);font-weight:700}
-.skill-detail .fine{font-size:12px;margin-top:10px}
-.section-head{max-width:850px}
-.card{box-shadow:none;border-radius:3px}
-.card:hover{box-shadow:0 12px 28px rgba(25,46,42,.06)}
-.console{border-radius:4px;transform:none}
-.btn{border-radius:3px}
-.tags span,.pill,.chips span{border-radius:3px}
-.resume{border-radius:3px}
-@media(max-width:760px){.skill-row{grid-template-columns:30px 1fr;gap:12px;padding:24px 0}.skill-detail{grid-column:2}.skill-name h3{font-size:22px}}
-
-/* Full visual refresh: restrained, professional portfolio styling */
-:root{--bg:#f7f8fa;--paper:#fff;--ink:#182536;--muted:#5d6b7b;--green:#245b86;--lime:#eaf1f7;--orange:#b36b36;--line:#dce2e8;--shadow:0 8px 24px rgba(24,37,54,.07);color-scheme:light}
-body{background:var(--bg);font-family:Arial,Helvetica,sans-serif;line-height:1.65;color:var(--ink)}
-header{background:#fff;border-bottom:1px solid var(--line);backdrop-filter:none;padding-top:15px;padding-bottom:15px}
-.brand{font-size:14px;letter-spacing:0;font-weight:750}
-.brand b{color:var(--green)}
-nav{gap:19px;font-size:11px;letter-spacing:.035em}
-nav a{font-weight:700;color:#4e5e6e}
-.wrap{width:min(1080px,90%)}
-.hero{min-height:0;padding:76px 0 70px;gap:48px}
-.eyebrow,.label,.mono{color:var(--green);letter-spacing:.08em;font-size:10px}
-h1{font-size:clamp(42px,5.3vw,66px);line-height:1.06;letter-spacing:-.045em;font-weight:750;margin:18px 0}
-h1 span,h2 span{color:var(--green)}
-.lead{font-size:17px;line-height:1.75}
-.availability{background:#edf4f9;border-color:#cfdeea;border-radius:4px;color:#23445d}
-.availability span{color:var(--green)}
-.btn{border-radius:4px;padding:11px 17px;box-shadow:none}
-.btn:hover{transform:translateY(-1px);box-shadow:0 4px 12px rgba(24,37,54,.08)}
-.btn.primary{background:var(--green);border-color:var(--green)}
-.tags span{border-radius:3px;background:#fff;font-size:10px}
-.console{background:#20354a;border-radius:6px;transform:none;box-shadow:0 12px 28px rgba(24,37,54,.12)}
-.console:after{display:none}
-.stat{border-radius:4px;background:#2a435b}
-.stat strong{color:#d8e7f2}
-.online{color:#b7d6c7}
-section{padding:66px 0;border-top:1px solid var(--line)}
-.section-head{margin-bottom:28px;gap:18px}
-.num{color:var(--green);font-weight:700}
-h2{font-size:clamp(29px,3.7vw,42px);letter-spacing:-.035em;font-weight:750}
-h3{font-size:20px;letter-spacing:-.02em;font-weight:700}
-.grid{gap:18px}
-.card{background:#fff;border:1px solid var(--line);border-radius:5px;padding:23px;box-shadow:none;transition:border-color .15s,box-shadow .15s}
-.card:hover{transform:none;border-color:#aebfce;box-shadow:0 6px 18px rgba(24,37,54,.06)}
-.card.feature{background:#edf3f8;border-color:#d6e2ec}
-.card.feature p{color:#53677a}
-.chips{gap:6px}
-.chips span{background:#f0f3f6;color:#3b5063;border-radius:3px;font-size:10px;font-weight:700}
-.feature .chips span{background:#fff}
-.skill-card{min-height:290px;display:flex;flex-direction:column;align-items:flex-start}
-.skill-card p{font-size:14px;margin:2px 0 8px}
-.skill-card .chips{margin-top:auto;padding-top:14px}
-.skill-top{display:flex;align-items:center;gap:10px;margin-bottom:10px}
-.skill-mark{display:inline-flex;align-items:center;justify-content:center;min-width:38px;height:32px;padding:0 7px;background:#edf3f8;border:1px solid #dce6ee;color:#285779;font-size:10px;font-weight:800;letter-spacing:.04em}
-.skill-top .label{color:#5d6b7b}
-.timeline article{gap:24px;border-color:var(--line)}
-.date{color:var(--green)}
-.resume{border-radius:5px;background:#fff}
-.pdf{border-radius:4px;background:var(--green)}
-.contact .card{background:#fff}
-footer{border-color:var(--line);letter-spacing:.02em}
-@media(max-width:760px){header{gap:10px}.hero{padding:52px 0;gap:30px}.console{padding:22px}.grid,.contact{grid-template-columns:1fr}.skill-card{min-height:0}.skill-card .chips{margin-top:4px}section{padding:50px 0}}
-</style></head><body>
-<header><a class="brand" href="#top">AMAR KANT YADAV<b> ·</b> CYBERSECURITY</a><nav><a href="#about">ABOUT</a><a href="#skills">SKILLS</a><a href="#work">PROJECTS</a><a href="#journey">EXPERIENCE</a><a href="#certifications">CERTIFICATIONS</a><a href="#resume">RESUME</a><a href="#contact">CONTACT ↗</a></nav></header>
-<main id="top"><div class="wrap hero"><div><div class="eyebrow">Cybersecurity · SOC · VAPT</div><h1>Cybersecurity student.<br><span>Security-focused builder.</span></h1><p class="lead">I'm <b>Amar Kant Yadav</b>, a Computer Science student building practical security tools and developing skills across SOC operations, vulnerability assessment, Linux security, and Python automation.</p><div class="actions"><a class="btn primary" href="#work">Explore projects ↓</a><a class="btn" href="#contact">Connect with me ↗</a></div><p class="availability"><span aria-hidden="true">●</span> Open to cybersecurity job and internship opportunities, especially in SOC operations, VAPT, and related security roles.</p><div class="tags"><span>B.TECH · COMPUTER SCIENCE</span><span>SOC · VAPT · PROGRAMMING</span><span>INDIA · IST</span></div></div><aside class="console"><div class="console-head"><span>MY SECURITY FOCUS</span><span class="online">● ONLINE</span></div><div class="terminal"><span>$</span> Focus areas<br><b>Security Operations</b> · Monitoring and investigation<br><b>Vulnerability Assessment</b> · Identify and validate risks<br><b>Security Engineering</b> · Automate, document, improve<br><span>Approach</span><br>Curious by nature. Evidence-led by practice.</div><div class="stats"><div class="stat"><small>FEATURED PROJECT</small><strong>VULNEX</strong></div><div class="stat"><small>HACKATHON RECOGNITION</small><strong>TOP 10</strong><small>TECHNOVA 2026</small></div></div></aside></div>
-<section id="about"><div class="wrap"><div class="section-head"><span class="num">01 /</span><div><div class="label">PROFILE / OVERVIEW</div><h2>A practical approach to<br><span>cybersecurity.</span></h2></div></div><div class="grid"><article class="card"><h3>How I work</h3><p>I value repeatable workflows, evidence-led analysis, responsible testing, and reports that help people decide what to fix next.</p><div class="chips"><span>Observe</span><span>Validate</span><span>Document</span></div></article><article class="card"><h3>Technical focus</h3><p>Network security, vulnerability assessment, Linux, threat detection, malware analysis, incident response, and secure coding.</p><div class="chips"><span>Python</span><span>Nmap</span><span>Wireshark</span><span>Kali Linux</span><span>C/C++</span></div></article></div></div></section>
-<section id="skills"><div class="wrap"><div class="section-head"><span class="num">02 /</span><div><div class="label">TECHNICAL SKILLS</div><h2>Security skills &amp; tools</h2><p class="muted">Skills developed through projects, guided training, and hands-on lab practice.</p></div></div><div class="grid skill-cards">
-<article class="card skill-card"><div class="skill-top"><span class="skill-mark">RT</span><span class="label">OFFENSIVE SECURITY</span></div><h3>Red Team</h3><p>Reconnaissance and controlled security testing to identify weaknesses and understand attack surfaces.</p><div class="chips"><span>Nmap</span><span>Subfinder</span><span>Amass</span><span>Burp Suite</span><span>Metasploit</span><span>Web testing</span><span>Linux privilege escalation</span><span>OWASP fundamentals</span></div></article>
-<article class="card skill-card"><div class="skill-top"><span class="skill-mark">BT</span><span class="label">DEFENSIVE SECURITY</span></div><h3>Blue Team</h3><p>Security monitoring, log review, baseline validation, and investigation fundamentals.</p><div class="chips"><span>SOC fundamentals</span><span>Log analysis</span><span>Incident response</span><span>Threat hunting</span><span>Splunk fundamentals</span><span>Wireshark</span><span>Security hardening</span><span>Risk reporting</span></div></article>
-<article class="card skill-card"><div class="skill-top"><span class="skill-mark">DEV</span><span class="label">SCRIPTING &amp; AUTOMATION</span></div><h3>Programming</h3><p>Building small utilities and repeatable workflows for security checks, data collection, and reporting.</p><div class="chips"><span>Python</span><span>Bash</span><span>C</span><span>C++</span><span>YAML</span><span>Git &amp; GitHub</span><span>Test automation</span><span>CLI tools</span><span>PDF reporting</span></div></article>
-<article class="card skill-card"><div class="skill-top"><span class="skill-mark">DF</span><span class="label">ANALYSIS &amp; EVIDENCE</span></div><h3>Digital Forensics</h3><p>Initial artifact review, file-integrity checks, and clear documentation to support technical analysis.</p><div class="chips"><span>PDF artifact analysis</span><span>SHA-256</span><span>Metadata review</span><span>File activity logs</span><span>Evidence documentation</span><span>Packet inspection</span><span>Malware triage</span><span>Timeline fundamentals</span></div><p class="fine">Areas of current project practice and learning.</p></article>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#f6f8fb">
+<meta name="description" content="Amar Kant Yadav — cybersecurity student focused on SOC, VAPT, security automation, and practical security projects.">
+<title>Amar Kant Yadav | Cybersecurity</title>
+<style>
+:root{--bg:#f6f8fb;--surface:#fff;--ink:#17283c;--muted:#617084;--blue:#245b86;--blue-dark:#173d5d;--soft:#eaf2f8;--line:#e0e7ee;--shadow:0 10px 30px rgba(23,40,60,.06);--radius:18px}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:90px}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.7 Inter,Arial,Helvetica,sans-serif}a{color:var(--blue);text-decoration:none}a:hover{color:var(--blue-dark)}.wrap{width:min(1120px,91%);margin:auto}
+header{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}.nav-wrap{min-height:72px;display:flex;align-items:center;justify-content:space-between;gap:22px}.brand{font-weight:800;letter-spacing:-.025em;color:var(--ink);font-size:14px;white-space:nowrap}.brand span{color:var(--blue)}nav{display:flex;align-items:center;flex-wrap:wrap;gap:20px}nav a{font-size:12px;font-weight:700;color:#536276}
+.intro{padding:78px 0 58px}.eyebrow,.section-kicker,.mini-label{font-size:11px;text-transform:uppercase;letter-spacing:.12em;font-weight:800;color:var(--blue)}h1{font-size:clamp(40px,6vw,68px);letter-spacing:-.055em;line-height:1.06;margin:15px 0 22px;max-width:850px}h1 span{color:var(--blue)}.intro-copy{max-width:900px;font-size:18px;line-height:1.9;color:#536276;margin:0}.intro-copy strong{color:var(--ink)}.intro-bottom{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-top:27px}.availability{font-size:13px;color:#2f536e;background:var(--soft);border:1px solid #d5e4ef;border-radius:999px;padding:9px 15px}.availability:before{content:"";display:inline-block;width:7px;height:7px;border-radius:50%;background:#39805f;margin:0 9px 1px 0}.actions{display:flex;gap:10px;flex-wrap:wrap}.btn{display:inline-flex;align-items:center;justify-content:center;border:1px solid #cdd8e3;border-radius:10px;padding:11px 17px;font-size:13px;font-weight:800;color:var(--ink);background:#fff}.btn.primary{background:var(--blue);border-color:var(--blue);color:#fff}.btn:hover{transform:translateY(-1px);box-shadow:var(--shadow)}
+.quick-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin:8px auto 68px}.quick-card{display:block;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:21px 20px;min-height:135px;box-shadow:0 3px 12px rgba(23,40,60,.025);transition:transform .2s,border-color .2s,box-shadow .2s}.quick-card:hover{transform:translateY(-4px);border-color:#b8cddd;box-shadow:var(--shadow)}.quick-icon{display:flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:12px;background:var(--soft);color:var(--blue);font-size:12px;font-weight:900;margin-bottom:13px}.quick-card strong{display:block;font-size:15px;letter-spacing:-.02em}.quick-card small{display:block;color:var(--muted);font-size:12px;margin-top:3px}
+section{padding:54px 0 62px;border-top:1px solid var(--line)}.section-head{display:flex;justify-content:space-between;align-items:end;gap:20px;margin-bottom:25px}.section-head p{max-width:560px;margin:8px 0 0;color:var(--muted);font-size:14px}h2{font-size:clamp(28px,4vw,40px);line-height:1.15;letter-spacing:-.04em;margin:7px 0 0}h3{font-size:18px;line-height:1.35;letter-spacing:-.025em;margin:9px 0 10px}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:24px;min-width:0;box-shadow:0 3px 12px rgba(23,40,60,.025)}.card p{color:var(--muted);font-size:14px;line-height:1.8;margin:8px 0 13px}.card.feature{background:#edf4f9;border-color:#d5e4ef}.card-top{display:flex;align-items:center;gap:10px}.icon-box{width:39px;height:39px;flex:0 0 39px;display:flex;align-items:center;justify-content:center;border-radius:12px;background:var(--soft);color:var(--blue);font-size:11px;font-weight:900}.mini-label{font-size:10px;letter-spacing:.09em;color:#63778b}.chips{display:flex;flex-wrap:wrap;gap:7px;margin-top:14px}.chips span{display:inline-flex;padding:5px 9px;border:1px solid #e0e7ed;border-radius:999px;background:#f8fafc;color:#41546a;font-size:11px;font-weight:700}.card-link{display:inline-block;margin-top:8px;font-size:13px;font-weight:800}
+.skill-card{min-height:275px;display:flex;flex-direction:column}.skill-card .chips{margin-top:auto;padding-top:12px}.skill-card p{margin-bottom:18px}.project-grid .card{display:flex;flex-direction:column;align-items:flex-start}.project-grid .card .chips{margin-top:auto}.project-grid .card-link{margin-top:17px}.badge{display:inline-block;background:#fff;border:1px solid #d8e4ee;border-radius:999px;padding:5px 10px;color:#3c627e;font-size:10px;font-weight:800;letter-spacing:.04em}
+.timeline{display:grid;gap:14px}.timeline-card{display:grid;grid-template-columns:175px 1fr;gap:20px}.timeline-date{font-size:11px;color:var(--blue);font-weight:800;letter-spacing:.04em;padding-top:5px}.timeline-card h3{margin-top:0}.timeline-card p{margin-bottom:8px}
+.cert-card{min-height:190px}.cert-card p{margin-bottom:0}.cert-type{font-size:10px;letter-spacing:.1em;font-weight:800;color:var(--blue);text-transform:uppercase}
+.resume-panel{display:flex;justify-content:space-between;align-items:center;gap:20px;background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:24px}.resume-info{display:flex;align-items:center;gap:15px}.pdf-icon{width:48px;height:54px;display:grid;place-items:center;border-radius:12px;background:var(--soft);color:var(--blue);font-size:12px;font-weight:900}.resume-info strong{display:block}.resume-info small{color:var(--muted)}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.contact-card a{display:block;width:fit-content;font-weight:700;margin:8px 0}.fine{font-size:12px;color:var(--muted);margin-top:18px}footer{padding:24px 0 30px;color:var(--muted);font-size:11px}footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;border-top:1px solid var(--line);padding-top:22px}
+@media(max-width:850px){.nav-wrap{align-items:flex-start;flex-direction:column;padding:15px 0}.quick-grid{grid-template-columns:repeat(2,minmax(0,1fr));margin-bottom:48px}.intro{padding-top:55px}.section-head{align-items:flex-start;flex-direction:column}}
+@media(max-width:620px){nav{gap:9px 14px}nav a{font-size:11px}.intro-copy{font-size:16px}.grid,.contact-grid{grid-template-columns:1fr}.quick-grid{gap:10px}.quick-card{padding:16px;min-height:120px}.card{padding:20px}.skill-card{min-height:0}.skill-card .chips{margin-top:0}.timeline-card{grid-template-columns:1fr;gap:4px}.resume-panel{align-items:flex-start;flex-direction:column}section{padding:43px 0 49px}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+</style>
+</head>
+<body>
+<header><div class="wrap nav-wrap"><a class="brand" href="#top">AMAR KANT YADAV <span> / CYBERSECURITY</span></a><nav><a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#experience">Experience</a><a href="#certifications">Certifications</a><a href="#contact">Contact</a></nav></div></header>
+<main id="top">
+<div class="wrap intro">
+<div class="eyebrow">Cybersecurity · SOC · VAPT · Security Automation</div>
+<h1>Building practical skills in <span>cybersecurity.</span></h1>
+<p class="intro-copy">I’m <strong>Amar Kant Yadav</strong>, a Computer Science student at HRIT University interested in how systems are attacked, monitored, and secured. Through hands-on projects and internship work, I’ve been building experience with vulnerability assessment, Linux security, defensive monitoring, Python automation, and technical reporting. I value careful testing, evidence-led analysis, and clear documentation—and I’m actively looking for opportunities to contribute and keep learning in a security team.</p>
+<div class="intro-bottom"><div class="availability">Open to SOC Analyst, VAPT, and cybersecurity internship opportunities</div><div class="actions"><a class="btn primary" href="#projects">Explore my work ↘</a><a class="btn" href="mailto:princeamarkant9@gmail.com">Contact me ↗</a></div></div>
+</div>
+<div class="wrap quick-grid">
+<a class="quick-card" href="#skills"><span class="quick-icon">01</span><strong>Technical Skills</strong><small>Red team · Blue team · Code · Forensics</small></a>
+<a class="quick-card" href="#certifications"><span class="quick-icon">02</span><strong>Certifications</strong><small>Credentials and continuous learning</small></a>
+<a class="quick-card" href="#experience"><span class="quick-icon">03</span><strong>Experience</strong><small>Internships, leadership, education</small></a>
+<a class="quick-card" href="#projects"><span class="quick-icon">04</span><strong>Projects</strong><small>Tools, analysis, and security practice</small></a>
+</div>
+<section id="about"><div class="wrap"><div class="section-head"><div><div class="section-kicker">01 / About</div><h2>A little about how I work</h2></div><p>I like turning security concepts into practical tools, repeatable checks, and findings that are understandable and useful.</p></div><div class="grid"><article class="card"><div class="card-top"><span class="icon-box">01</span><div class="mini-label">MY APPROACH</div></div><h3>Practical, responsible testing</h3><p>I focus on learning through authorized labs and scoped projects, validating results before drawing conclusions, and documenting what the evidence actually shows.</p><div class="chips"><span>Responsible testing</span><span>Evidence-led analysis</span><span>Clear reporting</span></div></article><article class="card"><div class="card-top"><span class="icon-box">02</span><div class="mini-label">CURRENT FOCUS</div></div><h3>Security from both sides</h3><p>I’m developing both offensive and defensive fundamentals—from reconnaissance and vulnerability assessment to log review, baseline checks, and incident investigation.</p><div class="chips"><span>SOC</span><span>VAPT</span><span>Linux</span><span>Python</span></div></article></div></div></section>
+<section id="skills"><div class="wrap"><div class="section-head"><div><div class="section-kicker">02 / Skills</div><h2>Technical skills, grouped by focus</h2></div><p>Tools and concepts I’ve used in projects, training, and hands-on practice. Proficiency varies by tool and task.</p></div><div class="grid">
+<article class="card skill-card"><div class="card-top"><span class="icon-box">RT</span><div class="mini-label">OFFENSIVE SECURITY</div></div><h3>Red Team Skills</h3><p>Reconnaissance and controlled security testing to identify weaknesses and understand attack surfaces.</p><div class="chips"><span>Nmap</span><span>Subfinder</span><span>Amass</span><span>Burp Suite</span><span>Metasploit</span><span>Web testing</span><span>Linux privilege escalation</span><span>OWASP fundamentals</span></div></article>
+<article class="card skill-card"><div class="card-top"><span class="icon-box">BT</span><div class="mini-label">DEFENSIVE SECURITY</div></div><h3>Blue Team Skills</h3><p>Monitoring, log review, baseline validation, and security investigation fundamentals.</p><div class="chips"><span>SOC fundamentals</span><span>Log analysis</span><span>Incident response</span><span>Threat hunting</span><span>Splunk fundamentals</span><span>Wireshark</span><span>Security hardening</span><span>Risk reporting</span></div></article>
+<article class="card skill-card"><div class="card-top"><span class="icon-box">DEV</span><div class="mini-label">SCRIPTING & AUTOMATION</div></div><h3>Programming Skills</h3><p>Building small utilities and repeatable workflows for security checks, data collection, and reporting.</p><div class="chips"><span>Python</span><span>Bash</span><span>C</span><span>C++</span><span>YAML</span><span>Git & GitHub</span><span>Test automation</span><span>CLI tools</span><span>PDF reporting</span></div></article>
+<article class="card skill-card"><div class="card-top"><span class="icon-box">DF</span><div class="mini-label">ANALYSIS & EVIDENCE</div></div><h3>Digital Forensics Skills</h3><p>Initial artifact review, file-integrity checks, and documentation to support technical analysis.</p><div class="chips"><span>PDF artifact analysis</span><span>SHA-256</span><span>Metadata review</span><span>File activity logs</span><span>Evidence documentation</span><span>Packet inspection</span><span>Malware triage</span><span>Timeline fundamentals</span></div></article>
 </div></div></section>
-<section id="work"><div class="wrap"><div class="section-head"><span class="num">03 /</span><div><div class="label">SELECTED WORK / BUILT WITH PURPOSE</div><h2>Selected projects &amp;<br><span>security tools.</span></h2></div></div><div class="grid"><article class="card feature"><div class="label">FLAGSHIP PROJECT · TOP 10 / TECHNOVA HACKATHON 2026</div><h3>VULNEX — Vulnerability Assessment Platform</h3><p>Python-based vulnerability scanning and reporting tool led by Team VORTEX. Combines Nmap-based host/service discovery, vulnerability identification, risk scoring, structured PDF reporting, and a Streamlit dashboard.</p><div class="chips"><span>Python</span><span>Nmap</span><span>Risk scoring</span><span>PDF reports</span><span>Streamlit</span></div><p><a href="https://github.com/AbyssTraveler08/vulnex" target="_blank" rel="noopener">View public VULNEX repository ↗</a></p></article><article class="card"><div class="label">INTEGRITY / MONITORING</div><h3>Secure File Transfer Monitoring</h3><p>File-activity monitoring and integrity verification using SHA-256, event correlation, logging, and a dashboard for reviewing events.</p><div class="chips"><span>Python</span><span>SHA-256</span><span>Monitoring</span></div><a href="https://github.com/AbyssTraveler08/Secure-File-Transfer" target="_blank" rel="noopener">View repository ↗</a></article><article class="card"><div class="label">MALWARE ANALYSIS</div><h3>PDF Malware Analysis Toolkit</h3><p>Examines embedded PDF objects and suspicious JavaScript or content to support structured initial forensic review.</p><div class="chips"><span>Python</span><span>PDF forensics</span><span>Reporting</span></div><a href="https://github.com/AbyssTraveler08/pdf-malware-analysis-toolkit" target="_blank" rel="noopener">View repository ↗</a></article><article class="card"><div class="label">NETWORK VISIBILITY</div><h3>Network Security Labs</h3><p>Hands-on practice with service discovery, packet inspection, network troubleshooting, and Linux-based analysis in controlled environments.</p><div class="chips"><span>Nmap</span><span>Wireshark</span><span>Linux</span></div><a href="https://tryhackme.com/p/abysstraveler02" target="_blank" rel="noopener">TryHackMe profile ↗</a></article><article class="card"><div class="label">SECURITY AWARENESS</div><h3>Phishing Awareness Session</h3><p>Co-delivered a phishing-awareness session with Shiva Mishra on 15 September 2026, focused on recognizing phishing indicators and safer digital habits.</p><div class="chips"><span>Awareness</span><span>Social engineering</span></div></article></div><p class="fine">All security testing is limited to authorized systems and controlled lab environments.</p></div></section>
-<section id="journey"><div class="wrap"><div class="section-head"><span class="num">04 /</span><div><div class="label">JOURNEY / EXPERIENCE</div><h2>Progress is a practice.</h2></div></div><div class="timeline"><article><div class="date">JAN — MAR 2026 · REMOTE</div><div><h3>Cyber Security Intern · Unified Mentor Private Limited</h3><p>Worked on simulated enterprise attack-and-defense projects. Assessed Linux privilege-escalation risks involving SUID binaries, weak permissions, and cron misconfigurations; contributed to SentinelShield, an intrusion-detection and web-protection system with traffic monitoring, anomaly detection, and real-time alerts. Recognized as a Top Performing Intern and awarded a ₹5,000 performance-based stipend.</p><div class="chips"><span>Linux security</span><span>Python</span><span>Threat detection</span></div></div></article><article><div class="date">CYART TECH</div><div><h3>SOC-domain Internship · CyArt Tech</h3><p>Contributed to QA and source-code review, UI validation, troubleshooting, and evidence-based reporting for a threat-intelligence platform.</p><div class="chips"><span>Validation</span><span>Troubleshooting</span><span>Technical reporting</span></div></div></article><article><div class="date">DEC 2025 — PRESENT</div><div><h3>Co-Tech Lead · Cyber Shield Center</h3><p>Lead a student cybersecurity club focused on security learning, CTFs, and campus awareness. Mentor members in Linux, networking, Python, Wireshark, Kali Linux, and security tooling; coordinate workshops and labs.</p></div></article><article><div class="date">2025 — 2029</div><div><h3>B.Tech · Computer Science — HRIT University</h3><p>Building a foundation in programming, data structures, operating systems, networking, and cybersecurity.</p></div></article></div></div></section>
-<section id="certifications"><div class="wrap"><div class="section-head"><span class="num">05 /</span><div><div class="label">CERTIFICATIONS / CONTINUOUS LEARNING</div><h2>Learning with intent.<br><span>Building with evidence.</span></h2><p class="muted">Credentials and training listed in my LinkedIn profile and resume. Course completions and professional certifications are identified by their published titles.</p></div></div><div class="grid">
-<article class="card feature"><div class="label">CYBERSECURITY CREDENTIAL</div><h3>ISC² Certified in Cybersecurity (CC)</h3><p>Foundational cybersecurity credential covering core security concepts and practices.</p></article>
-<article class="card"><div class="label">BLUE TEAM</div><h3>Blue Team Junior Analyst (BTJA)</h3><p>Blue-team-focused credential supporting my interest in security monitoring and defensive analysis.</p></article>
-<article class="card"><div class="label">SECURITY AWARENESS</div><h3>Certified Cybersecurity Educator Professional (CCEP)</h3><p>Credential listed in my professional profile, aligned with cybersecurity education and awareness.</p></article>
-<article class="card"><div class="label">SPECIALIZATION</div><h3>Python for Cybersecurity</h3><p>Specialization listed in my LinkedIn profile, complementing my use of Python for security automation and analysis.</p></article>
-<article class="card"><div class="label">JOB SIMULATION</div><h3>JPMorganChase — Software Engineering Job Simulation</h3><p>Job simulation listed in my LinkedIn profile.</p></article>
-<article class="card"><div class="label">CYBERSECURITY TRAINING</div><h3>Cyber Job Simulation</h3><p>Training item listed in my LinkedIn profile.</p></article>
-<article class="card"><div class="label">ETHICAL HACKING</div><h3>The Complete Ethical Hacking Bootcamp: Beginner to Advanced</h3><p>Course listed in my LinkedIn profile.</p></article>
-</div><p class="fine">Credential verification links and issue dates were not available in the provided profile export. Add credential URLs where available to let visitors verify each item.</p></div></section>
-<section id="resume"><div class="wrap"><div class="section-head"><span class="num">06 /</span><div><div class="label">RESUME / DOWNLOAD</div><h2>Experience, skills &amp; projects.<br><span>In one document.</span></h2><p class="muted">Download my latest resume as a PDF for a concise overview of my experience, skills, education, and selected projects.</p></div></div><div class="resume"><div class="resume-card"><div class="pdf">PDF</div><div><b>Amar Kant Yadav — Resume</b><small>PDF · Downloadable copy</small></div></div><a class="btn primary" href="./Amar%27s%20Resume.pdf" download="Amar-Resume.pdf">Download resume ↓</a></div></div></section>
-<section id="contact"><div class="wrap"><div class="section-head"><span class="num">07 /</span><div><div class="label">CONTACT / OPEN CHANNEL</div><h2>Let's make systems<br><span>harder to break.</span></h2><p class="muted">I am actively open to cybersecurity job and internship opportunities, with a particular interest in SOC Analyst and VAPT roles where I can contribute to security monitoring, vulnerability assessment, and evidence-driven security analysis.</p></div></div><div class="contact"><div class="card"><h3>Direct contact</h3><a href="mailto:princeamarkant9@gmail.com">princeamarkant9@gmail.com ↗</a><p class="muted">Ghaziabad, Uttar Pradesh, India</p></div><div class="card"><h3>Profiles</h3><a href="https://github.com/AbyssTraveler08" target="_blank" rel="noopener">GitHub · AbyssTraveler08 ↗</a><a href="https://www.linkedin.com/in/amar-kant-yadav/" target="_blank" rel="noopener">LinkedIn · Amar Kant Yadav ↗</a><a href="https://tryhackme.com/p/abysstraveler02" target="_blank" rel="noopener">TryHackMe · abysstraveler02 ↗</a></div></div></div></section></main><footer><div class="wrap">AMAR KANT YADAV · LEARN CONTINUOUSLY. TEST RESPONSIBLY. BUILD SECURELY. <span style="float:right">STATIC HTML · NO BACKEND</span></div></footer></body></html>
+<section id="projects"><div class="wrap"><div class="section-head"><div><div class="section-kicker">03 / Projects</div><h2>Selected work & security tools</h2></div><p>Projects that demonstrate my interest in security automation, vulnerability assessment, and evidence-based analysis.</p></div><div class="grid project-grid">
+<article class="card feature"><span class="badge">FEATURED · TOP 10, TECHNOVA HACKATHON 2026</span><h3>VULNEX — Vulnerability Assessment Tool</h3><p>A Python-based vulnerability scanning and reporting project using Nmap, vulnerability analysis, risk scoring, and structured PDF reporting.</p><div class="chips"><span>Python</span><span>Nmap</span><span>Risk scoring</span><span>PDF reporting</span></div><a class="card-link" href="https://github.com/AbyssTraveler08/VULNEX" target="_blank" rel="noopener">View VULNEX on GitHub ↗</a></article>
+<article class="card"><span class="mini-label">SECURITY BASELINES</span><h3>Security Baseline Checker</h3><p>Python and YAML-based project that checks system/application configuration against defined security baselines, with automated tests for validation.</p><div class="chips"><span>Python</span><span>YAML</span><span>pytest</span><span>Configuration checks</span></div><a class="card-link" href="https://github.com/CyArt-Tech/Security-Baseline-Checker" target="_blank" rel="noopener">View project repository ↗</a></article>
+<article class="card"><span class="mini-label">FILE INTEGRITY</span><h3>Secure File Transfer Monitoring</h3><p>Project focused on tracking file activity, identifying unexpected movement, recording events, and using SHA-256 hashes to verify integrity.</p><div class="chips"><span>Python</span><span>SHA-256</span><span>Activity logs</span></div></article>
+<article class="card"><span class="mini-label">MALWARE ANALYSIS</span><h3>PDF Malware Analysis Toolkit</h3><p>Static analysis toolkit for reviewing PDF structure and suspicious content to support an initial malware triage workflow.</p><div class="chips"><span>Python</span><span>PDF analysis</span><span>Reporting</span></div><a class="card-link" href="https://github.com/AbyssTraveler08/pdf-malware-analysis-toolkit" target="_blank" rel="noopener">View repository ↗</a></article>
+<article class="card"><span class="mini-label">NETWORK SECURITY</span><h3>Reconnaissance & Network Labs</h3><p>Hands-on practice with service discovery, packet inspection, Linux-based analysis, and reconnaissance workflows in authorized environments.</p><div class="chips"><span>Nmap</span><span>Wireshark</span><span>Linux</span></div><a class="card-link" href="https://tryhackme.com/p/abysstraveler02" target="_blank" rel="noopener">View TryHackMe profile ↗</a></article>
+<article class="card"><span class="mini-label">SECURITY AWARENESS</span><h3>Phishing Awareness Session</h3><p>Co-delivered a phishing-awareness session with Shiva Mishra on 15 September 2026, focused on recognizing phishing indicators and safer digital habits.</p><div class="chips"><span>Awareness</span><span>Social engineering</span></div></article>
+</div><p class="fine">Security testing is limited to authorized systems and controlled lab environments.</p></div></section>
+<section id="experience"><div class="wrap"><div class="section-head"><div><div class="section-kicker">04 / Experience & Education</div><h2>Where I’ve been learning</h2></div><p>Internship work, technical leadership, and academic foundations that support my cybersecurity path.</p></div><div class="timeline">
+<article class="card timeline-card"><div class="timeline-date">JAN — MAR 2026 · REMOTE</div><div><div class="mini-label">INTERNSHIP</div><h3>Cyber Security Intern · Unified Mentor Private Limited</h3><p>Worked on simulated enterprise security projects, including Linux privilege-escalation checks for SUID binaries, weak permissions, and cron misconfigurations. Contributed to SentinelShield, an intrusion-detection and web-protection project involving traffic monitoring, anomaly detection, and alerts. Recognized as a Top Performing Intern and awarded a ₹5,000 performance-based stipend.</p><div class="chips"><span>Linux security</span><span>Python</span><span>Threat detection</span></div></div></article>
+<article class="card timeline-card"><div class="timeline-date">CYART TECH</div><div><div class="mini-label">SOC-DOMAIN INTERNSHIP</div><h3>Cybersecurity Intern · CyArt Tech</h3><p>Contributed to a Security Baseline Checker capstone using Python and YAML, including configuration checks and test validation. Also worked on QA, troubleshooting, and evidence-based reporting tasks.</p><div class="chips"><span>Security baselines</span><span>Python</span><span>pytest</span><span>Technical reporting</span></div></div></article>
+<article class="card timeline-card"><div class="timeline-date">DEC 2025 — PRESENT</div><div><div class="mini-label">LEADERSHIP</div><h3>Co-Tech Lead · Cyber Shield Center</h3><p>Support a student cybersecurity club focused on security learning, CTFs, and campus awareness; help members explore Linux, networking, Python, Wireshark, Kali Linux, and security tooling.</p></div></article>
+<article class="card timeline-card"><div class="timeline-date">2025 — 2029</div><div><div class="mini-label">EDUCATION</div><h3>B.Tech · Computer Science — HRIT University</h3><p>Building foundations in programming, data structures, operating systems, networking, and cybersecurity.</p></div></article>
+</div></div></section>
+<section id="certifications"><div class="wrap"><div class="section-head"><div><div class="section-kicker">05 / Certifications & Learning</div><h2>Credentials and continued learning</h2></div><p>Professional credentials and training courses listed in my profile.</p></div><div class="grid">
+<article class="card cert-card feature"><div class="cert-type">Cybersecurity credential</div><h3>ISC² Certified in Cybersecurity (CC)</h3><p>Foundational credential covering core cybersecurity concepts and practices.</p></article>
+<article class="card cert-card"><div class="cert-type">Blue team</div><h3>Blue Team Junior Analyst (BTJA)</h3><p>Blue-team-focused credential aligned with monitoring and defensive analysis.</p></article>
+<article class="card cert-card"><div class="cert-type">Security awareness</div><h3>Certified Cybersecurity Educator Professional (CCEP)</h3><p>Credential related to cybersecurity education and awareness.</p></article>
+<article class="card cert-card"><div class="cert-type">Specialization</div><h3>Python for Cybersecurity</h3><p>Specialization supporting my use of Python for security automation and analysis.</p></article>
+<article class="card cert-card"><div class="cert-type">Job simulation</div><h3>JPMorganChase — Software Engineering Job Simulation</h3><p>Job simulation listed in my professional profile.</p></article>
+<article class="card cert-card"><div class="cert-type">Cybersecurity training</div><h3>Cyber Job Simulation</h3><p>Cybersecurity training item listed in my professional profile.</p></article>
+<article class="card cert-card"><div class="cert-type">Ethical hacking</div><h3>The Complete Ethical Hacking Bootcamp: Beginner to Advanced</h3><p>Course listed in my professional profile.</p></article>
+</div><p class="fine">Credential issue dates and verification links should be added where available so visitors can independently verify each item.</p></div></section>
+<section id="resume"><div class="wrap"><div class="section-head"><div><div class="section-kicker">06 / Resume</div><h2>My experience, in one document</h2></div><p>Download a concise overview of my education, experience, skills, and selected projects.</p></div><div class="resume-panel"><div class="resume-info"><div class="pdf-icon">PDF</div><div><strong>Amar Kant Yadav — Resume</strong><small>PDF · Downloadable copy</small></div></div><a class="btn primary" href="./Amar%27s%20Resume.pdf" download="Amar-Resume.pdf">Download resume ↓</a></div></div></section>
+<section id="contact"><div class="wrap"><div class="section-head"><div><div class="section-kicker">07 / Contact</div><h2>Let’s connect</h2></div><p>I’m open to SOC Analyst, VAPT, and related cybersecurity internships or entry-level opportunities where I can contribute, learn, and grow.</p></div><div class="contact-grid"><article class="card contact-card"><div class="card-top"><span class="icon-box">@</span><div class="mini-label">EMAIL</div></div><h3>Get in touch</h3><a href="mailto:princeamarkant9@gmail.com">princeamarkant9@gmail.com ↗</a><p>Ghaziabad, Uttar Pradesh, India</p></article><article class="card contact-card"><div class="card-top"><span class="icon-box">↗</span><div class="mini-label">PROFILES</div></div><h3>Find me online</h3><a href="https://github.com/AbyssTraveler08" target="_blank" rel="noopener">GitHub · AbyssTraveler08 ↗</a><a href="https://www.linkedin.com/in/amar-kant-yadav/" target="_blank" rel="noopener">LinkedIn · Amar Kant Yadav ↗</a><a href="https://tryhackme.com/p/abysstraveler02" target="_blank" rel="noopener">TryHackMe · abysstraveler02 ↗</a></article></div></div></section>
+</main>
+<footer><div class="wrap"><span>AMAR KANT YADAV · LEARN CONTINUOUSLY. TEST RESPONSIBLY. BUILD SECURELY.</span><span>Cybersecurity portfolio · GitHub Pages</span></div></footer>
+</body></html>
