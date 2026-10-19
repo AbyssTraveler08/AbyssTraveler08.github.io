@@ -1,73 +1,75 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#f7f8fc"><meta name="description" content="Amar Kant Yadav — cybersecurity portfolio across SOC, VAPT, Python, Linux and security automation."><title>Amar Kant Yadav | Cybersecurity Portfolio</title><style>
-:root{--bg:#f7f8fc;--panel:#fff;--line:#e2e7f0;--text:#17243a;--muted:#5d6b80;--primary:#3558d4;--coral:#e87959;--pale:#edf1ff;--shadow:0 14px 36px rgba(28,44,78,.07);color-scheme:light}
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#f5f0e7"><meta name="description" content="Amar Kant Yadav — cybersecurity portfolio across SOC, VAPT, Python, Linux and security automation."><title>Amar Kant Yadav | Cybersecurity Portfolio</title><style>
+:root{--bg:#f5f0e7;--paper:#fffdf8;--ink:#192e2a;--muted:#66736b;--green:#176b52;--lime:#d7ed75;--orange:#d66c45;--line:#dedfd3;--shadow:0 18px 45px rgba(25,46,42,.09);color-scheme:light}
 *{box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:90px}
-body{margin:0;background:radial-gradient(ellipse at 88% 0%,rgba(211,222,255,.62),transparent 33%),radial-gradient(ellipse at 0% 35%,rgba(255,228,215,.38),transparent 28%),var(--bg);color:var(--text);font-family:Inter,"Segoe UI",system-ui,-apple-system,sans-serif;font-size:16px;line-height:1.7}
-a{color:var(--primary);text-decoration:none;transition:color .2s,transform .2s}
-a:hover{color:#203b9e}
-header{position:sticky;top:0;z-index:5;display:flex;justify-content:space-between;align-items:center;gap:24px;padding:17px max(5vw,20px);background:rgba(247,248,252,.93);border-bottom:1px solid var(--line);backdrop-filter:blur(16px)}
-.brand{font:750 13px/1.3 Inter,"Segoe UI",sans-serif;letter-spacing:.015em;color:var(--text)}
-.brand b{color:var(--coral)}
-nav{display:flex;align-items:center;gap:22px;font:650 12px Inter,"Segoe UI",sans-serif}
+html{scroll-behavior:smooth;scroll-padding-top:88px}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.75 Inter,"Segoe UI",system-ui,sans-serif}
+a{color:var(--green);text-decoration:none;transition:color .2s,transform .2s}
+a:hover{color:var(--orange)}
+header{position:sticky;top:0;z-index:10;display:flex;align-items:center;justify-content:space-between;gap:24px;padding:17px max(5vw,22px);background:rgba(245,240,231,.93);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.brand{color:var(--ink);font-size:13px;font-weight:850;letter-spacing:-.02em}
+.brand b{color:var(--orange)}
+nav{display:flex;flex-wrap:wrap;gap:22px;font-size:11px;font-weight:800;letter-spacing:.08em}
 nav a{color:var(--muted)}
-.wrap{width:min(1100px,90%);margin-inline:auto}
-.hero{display:grid;grid-template-columns:1.08fr .92fr;gap:54px;align-items:center;padding:82px 0 74px;min-height:560px}
-.eyebrow,.label,.mono{font:750 11px Inter,"Segoe UI",sans-serif;letter-spacing:.13em;text-transform:uppercase;color:var(--primary)}
-h1{font-size:clamp(44px,6vw,76px);line-height:1.04;letter-spacing:-.065em;margin:18px 0 22px;font-weight:800}
-h1 span,h2 span{color:var(--primary)}
-.lead{font-size:18px;line-height:1.8;color:var(--muted);max-width:620px}
-.availability{display:block;width:fit-content;max-width:100%;margin:0 0 22px;padding:10px 15px;border:1px solid #d7e0ff;border-radius:999px;background:var(--pale);color:#263e9f;font-size:13px;line-height:1.55}
-.availability span{color:var(--coral);margin-right:7px}
-.actions{display:flex;flex-wrap:wrap;gap:12px;margin:25px 0 20px}
-.btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 19px;border-radius:999px;border:1px solid #d8dfec;color:#293750;background:#fff;font:700 13px Inter,"Segoe UI",sans-serif;box-shadow:0 3px 10px rgba(27,43,73,.04);transition:transform .2s,box-shadow .2s}
+.wrap{width:min(1120px,90%);margin-inline:auto}
+.hero{display:grid;grid-template-columns:1.12fr .88fr;gap:55px;align-items:center;padding:88px 0 82px;min-height:600px}
+.eyebrow,.label,.mono{color:var(--green);font-size:11px;font-weight:850;letter-spacing:.14em;text-transform:uppercase}
+h1{font-size:clamp(44px,6.4vw,80px);line-height:.99;letter-spacing:-.075em;margin:22px 0 25px;font-weight:850;max-width:700px}
+h1 span,h2 span{color:var(--green)}
+.lead{max-width:630px;color:var(--muted);font-size:18px;line-height:1.85}
+.availability{display:block;width:fit-content;max-width:100%;margin:22px 0;padding:11px 15px;border:1px solid #cddcb0;border-radius:12px;background:#eef4d9;color:#25462f;font-size:13px;line-height:1.6}
+.availability span{color:var(--orange);margin-right:7px}
+.actions{display:flex;flex-wrap:wrap;gap:11px;margin:25px 0}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 19px;border:1px solid var(--ink);border-radius:7px;background:transparent;color:var(--ink);font-size:13px;font-weight:800;transition:transform .2s,box-shadow .2s}
 .btn:hover{transform:translateY(-2px);box-shadow:var(--shadow)}
-.btn.primary,.primary{background:var(--primary);color:#fff;border-color:var(--primary)}
-.btn.primary:hover,.primary:hover{background:#2947b7;color:#fff}
-.tags{display:flex;flex-wrap:wrap;gap:8px}
-.tags span,.pill{border:1px solid var(--line);padding:6px 10px;border-radius:999px;color:#52627a;background:#fff;font:650 10px Inter,"Segoe UI",sans-serif;letter-spacing:.04em}
-.console{position:relative;overflow:hidden;border:1px solid var(--line);border-radius:24px;background:linear-gradient(145deg,#fff,#eef2ff);padding:27px;box-shadow:0 24px 65px rgba(35,55,100,.11)}
-.console:before{content:"";position:absolute;right:-50px;top:-55px;width:190px;height:190px;border-radius:50%;background:rgba(53,88,212,.08)}
-.console-head{position:relative;display:flex;justify-content:space-between;gap:15px;border-bottom:1px solid var(--line);padding-bottom:15px;font:750 10px Inter,"Segoe UI",sans-serif;letter-spacing:.09em;color:var(--muted)}
-.online{color:#13876c}
-.terminal{position:relative;padding:20px 0 8px;font:500 14px/2 Inter,"Segoe UI",sans-serif;color:#34445c}
-.terminal span{color:var(--primary);font-weight:750}
-.stats{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:18px}
-.stat{background:#fff;border:1px solid var(--line);padding:16px;border-radius:14px}
-.stat small{display:block;color:#6b7890;font:750 9px Inter,"Segoe UI",sans-serif;letter-spacing:.08em}
-.stat strong{font:800 23px Inter,"Segoe UI",sans-serif;letter-spacing:-.04em;color:var(--text)}
-section{padding:76px 0;border-top:1px solid var(--line)}
-.section-head{display:flex;gap:22px;margin-bottom:32px}
-.num{color:var(--coral);font:750 11px Inter,"Segoe UI",sans-serif;letter-spacing:.08em;padding-top:9px;min-width:30px}
-h2{font-size:clamp(30px,4vw,46px);letter-spacing:-.055em;line-height:1.13;margin:5px 0 14px;font-weight:800}
-h3{margin:5px 0 9px;font-size:20px;letter-spacing:-.025em;line-height:1.3}
-.muted{color:var(--muted)}
+.btn.primary,.primary{background:var(--green);color:#fff;border-color:var(--green)}
+.btn.primary:hover,.primary:hover{background:#104d3c;color:#fff}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+.tags span,.pill{border:1px solid var(--line);border-radius:5px;padding:6px 10px;background:var(--paper);color:var(--muted);font-size:10px;font-weight:800;letter-spacing:.04em}
+.console{position:relative;overflow:hidden;padding:30px;border-radius:18px;background:var(--ink);color:#f8f5eb;box-shadow:0 25px 55px rgba(25,46,42,.18);transform:rotate(1deg)}
+.console:after{content:"";position:absolute;width:190px;height:190px;border-radius:50%;right:-80px;bottom:-95px;background:rgba(215,237,117,.12)}
+.console-head{display:flex;justify-content:space-between;gap:15px;padding-bottom:17px;border-bottom:1px solid #39534b;color:#e7eadf;font-size:10px;font-weight:850;letter-spacing:.1em}
+.online{color:var(--lime)}
+.terminal{position:relative;padding:21px 0 8px;color:#d7e0d5;font-size:14px;line-height:2}
+.terminal span{color:var(--lime);font-weight:850}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:11px;margin-top:18px}
+.stat{padding:17px;border:1px solid #39534b;border-radius:10px;background:#223b34}
+.stat small{display:block;color:#bdcfc3;font-size:9px;font-weight:850;letter-spacing:.08em}
+.stat strong{display:block;color:var(--lime);font-size:25px;font-weight:850;letter-spacing:-.05em}
+section{padding:80px 0;border-top:1px solid var(--line)}
+.section-head{display:flex;gap:22px;margin-bottom:35px}
+.num{min-width:35px;padding-top:8px;color:var(--orange);font-size:11px;font-weight:850;letter-spacing:.08em}
+h2{margin:4px 0 14px;font-size:clamp(31px,4.4vw,49px);line-height:1.08;letter-spacing:-.06em;font-weight:850}
+h3{margin:8px 0 10px;font-size:21px;line-height:1.3;letter-spacing:-.035em}
+.muted,.card p,.timeline p{color:var(--muted)}
 .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
-.card{border:1px solid var(--line);background:rgba(255,255,255,.9);padding:25px;border-radius:18px;box-shadow:0 6px 24px rgba(31,49,86,.035);transition:transform .2s,box-shadow .2s,border-color .2s}
-.card:hover{border-color:#bdcaff;transform:translateY(-3px);box-shadow:var(--shadow)}
-.card p{color:var(--muted);line-height:1.75}
-.chips{display:flex;flex-wrap:wrap;gap:7px}
-.chips span{font:650 10px Inter,"Segoe UI",sans-serif;color:#304fc0;background:var(--pale);padding:5px 9px;border-radius:999px}
-.feature{background:linear-gradient(120deg,#fff,#f0f3ff)}
-.timeline article{display:grid;grid-template-columns:130px 1fr;gap:24px;padding:23px 0;border-bottom:1px solid var(--line)}
-.date{font:750 11px Inter,"Segoe UI",sans-serif;color:var(--primary);padding-top:6px}
-.timeline p{color:var(--muted);line-height:1.75}
-.resume-card{display:flex;align-items:center;gap:17px;border:1px solid var(--line);padding:20px;border-radius:16px;background:#fff;box-shadow:0 8px 24px rgba(31,49,86,.05)}
-.pdf{display:flex;align-items:center;justify-content:center;flex-shrink:0;width:52px;height:58px;border:1px solid #d7e0ff;border-radius:10px;background:var(--pale);color:var(--primary);font:750 12px Inter,"Segoe UI",sans-serif}
-.resume-card small{color:#6b7890}
-.resume{display:flex;align-items:center;justify-content:space-between;gap:22px}
-.contact{display:grid;grid-template-columns:1fr 1fr;gap:20px}
-.contact .card{background:#fff}
-.contact a{display:block;width:fit-content;margin:7px 0;border-bottom:1px solid #e7ebf2}
-.fine{font-size:12px;color:#68778e}
-footer{padding:28px 0;color:#68778e;font:600 11px Inter,"Segoe UI",sans-serif;border-top:1px solid var(--line)}
-@media(max-width:760px){header{align-items:flex-start;gap:14px;flex-direction:column}nav{gap:10px 16px;flex-wrap:wrap}.hero{grid-template-columns:1fr;padding:54px 0;min-height:0}.console{padding:22px}.grid,.contact{grid-template-columns:1fr}.feature{grid-column:auto}.timeline article{grid-template-columns:1fr;gap:4px}.resume{align-items:flex-start;flex-direction:column}section{padding:55px 0}h1{font-size:clamp(40px,12vw,58px)}}
-@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
+.card{padding:27px;border:1px solid var(--line);border-radius:13px;background:var(--paper);box-shadow:0 5px 18px rgba(25,46,42,.025);transition:transform .22s,box-shadow .22s,border-color .22s}
+.card:hover{transform:translateY(-4px);border-color:#a9c6a5;box-shadow:var(--shadow)}
+.card p{line-height:1.8}
+.card.feature{background:var(--lime);border-color:var(--lime)}
+.card.feature p{color:#3f5035}
+.card.feature .label{color:#37553a}
+.chips{display:flex;flex-wrap:wrap;gap:7px;margin:14px 0}
+.chips span{padding:5px 9px;border-radius:5px;background:#e8eee3;color:#28513e;font-size:10px;font-weight:800}
+.feature .chips span{background:rgba(255,255,255,.55)}
+.timeline article{display:grid;grid-template-columns:150px 1fr;gap:25px;padding:25px 0;border-bottom:1px solid var(--line)}
+.date{padding-top:6px;color:var(--green);font-size:11px;font-weight:850}
+.resume{display:flex;align-items:center;justify-content:space-between;gap:22px;padding:24px;border:1px solid var(--line);border-radius:13px;background:var(--paper)}
+.resume-card{display:flex;align-items:center;gap:16px}
+.pdf{display:flex;align-items:center;justify-content:center;width:55px;height:62px;flex-shrink:0;border-radius:8px;background:var(--green);color:#fff;font-size:12px;font-weight:850}
+.resume-card small{display:block;color:var(--muted)}
+.contact{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.contact .card{background:var(--paper)}
+.contact a{display:block;width:fit-content;margin:9px 0;font-weight:700}
+.fine{font-size:12px;color:var(--muted)}
+footer{padding:27px 0;border-top:1px solid var(--line);color:var(--muted);font-size:11px;font-weight:750;letter-spacing:.04em}
+@media(max-width:760px){header{align-items:flex-start;flex-direction:column;gap:12px}nav{gap:10px 16px}.hero{grid-template-columns:1fr;gap:35px;padding:56px 0;min-height:0}.console{transform:none;padding:22px}.grid,.contact{grid-template-columns:1fr}.timeline article{grid-template-columns:1fr;gap:4px}.resume{align-items:flex-start;flex-direction:column}section{padding:57px 0}h1{font-size:clamp(42px,12vw,62px)}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;transition:none!important}}
 </style></head><body>
-<header><a class="brand" href="#top">AKY<b>_</b> / SECURITY PORTFOLIO</a><nav><a href="#about">ABOUT</a><a href="#work">PROJECTS</a><a href="#journey">EXPERIENCE</a><a href="#resume">RESUME</a><a href="#contact">CONTACT ↗</a></nav></header>
+<header><a class="brand" href="#top">AMAR KANT YADAV<b> ·</b> CYBERSECURITY</a><nav><a href="#about">ABOUT</a><a href="#work">PROJECTS</a><a href="#journey">EXPERIENCE</a><a href="#resume">RESUME</a><a href="#contact">CONTACT ↗</a></nav></header>
 <main id="top"><div class="wrap hero"><div><div class="eyebrow">Cybersecurity · SOC · VAPT</div><h1>Think like an attacker.<br><span>Build like a defender.</span></h1><p class="lead">I'm <b>Amar Kant Yadav</b>, a Computer Science student building practical security tools and developing skills across SOC operations, vulnerability assessment, Linux security, and Python automation.</p><div class="actions"><a class="btn primary" href="#work">Explore projects ↓</a><a class="btn" href="#contact">Connect with me ↗</a></div><p class="availability"><span aria-hidden="true">●</span> Open to cybersecurity job and internship opportunities, especially in SOC operations, VAPT, and related security roles.</p><div class="tags"><span>B.TECH · COMPUTER SCIENCE</span><span>SOC · VAPT · PROGRAMMING</span><span>INDIA · IST</span></div></div><aside class="console"><div class="console-head"><span>MY SECURITY FOCUS</span><span class="online">● ONLINE</span></div><div class="terminal"><span>$</span> Focus areas<br><b>Security Operations</b> · Monitoring and investigation<br><b>Vulnerability Assessment</b> · Identify and validate risks<br><b>Security Engineering</b> · Automate, document, improve<br><span>Approach</span><br>Curious by nature. Evidence-led by practice.</div><div class="stats"><div class="stat"><small>FEATURED PROJECT</small><strong>VULNEX</strong></div><div class="stat"><small>HACKATHON RECOGNITION</small><strong>TOP 10</strong><small>TECHNOVA 2026</small></div></div></aside></div>
 <section id="about"><div class="wrap"><div class="section-head"><span class="num">01 /</span><div><div class="label">PROFILE / OVERVIEW</div><h2>Curiosity is the start.<br><span>Method makes it useful.</span></h2></div></div><div class="grid"><article class="card"><h3>How I work</h3><p>I value repeatable workflows, evidence-led analysis, responsible testing, and reports that help people decide what to fix next.</p><div class="chips"><span>Observe</span><span>Validate</span><span>Document</span></div></article><article class="card"><h3>Technical focus</h3><p>Network security, vulnerability assessment, Linux, threat detection, malware analysis, incident response, and secure coding.</p><div class="chips"><span>Python</span><span>Nmap</span><span>Wireshark</span><span>Kali Linux</span><span>C/C++</span></div></article></div></div></section>
-<section id="work"><div class="wrap"><div class="section-head"><span class="num">02 /</span><div><div class="label">FIELD NOTES / SELECTED WORK</div><h2>Built to investigate.<br><span>Designed to explain.</span></h2></div></div><div class="grid"><article class="card feature"><div class="label">FLAGSHIP PROJECT · TOP 10 / TECHNOVA HACKATHON 2026</div><h3>VULNEX — Vulnerability Assessment Platform</h3><p>Python-based vulnerability scanning and reporting tool led by Team VORTEX. Combines Nmap-based host/service discovery, vulnerability identification, risk scoring, structured PDF reporting, and a Streamlit dashboard.</p><div class="chips"><span>Python</span><span>Nmap</span><span>Risk scoring</span><span>PDF reports</span><span>Streamlit</span></div><p><a href="https://github.com/AbyssTraveler08/vulnex" target="_blank" rel="noopener">View public VULNEX repository ↗</a></p></article><article class="card"><div class="label">INTEGRITY / MONITORING</div><h3>Secure File Transfer Monitoring</h3><p>File-activity monitoring and integrity verification using SHA-256, event correlation, logging, and a dashboard for reviewing events.</p><div class="chips"><span>Python</span><span>SHA-256</span><span>Monitoring</span></div><a href="https://github.com/AbyssTraveler08/Secure-File-Transfer" target="_blank" rel="noopener">View repository ↗</a></article><article class="card"><div class="label">MALWARE ANALYSIS</div><h3>PDF Malware Analysis Toolkit</h3><p>Examines embedded PDF objects and suspicious JavaScript or content to support structured initial forensic review.</p><div class="chips"><span>Python</span><span>PDF forensics</span><span>Reporting</span></div><a href="https://github.com/AbyssTraveler08/pdf-malware-analysis-toolkit" target="_blank" rel="noopener">View repository ↗</a></article><article class="card"><div class="label">NETWORK VISIBILITY</div><h3>Network Security Labs</h3><p>Hands-on practice with service discovery, packet inspection, network troubleshooting, and Linux-based analysis in controlled environments.</p><div class="chips"><span>Nmap</span><span>Wireshark</span><span>Linux</span></div><a href="https://tryhackme.com/p/abysstraveler02" target="_blank" rel="noopener">TryHackMe profile ↗</a></article><article class="card"><div class="label">SECURITY AWARENESS</div><h3>Phishing Awareness Session</h3><p>Co-delivered a phishing-awareness session with Shiva Mishra on 15 September 2026, focused on recognizing phishing indicators and safer digital habits.</p><div class="chips"><span>Awareness</span><span>Social engineering</span></div></article></div><p class="fine">All security testing is limited to authorized systems and controlled lab environments.</p></div></section>
+<section id="work"><div class="wrap"><div class="section-head"><span class="num">02 /</span><div><div class="label">SELECTED WORK / BUILT WITH PURPOSE</div><h2>Built to investigate.<br><span>Designed to explain.</span></h2></div></div><div class="grid"><article class="card feature"><div class="label">FLAGSHIP PROJECT · TOP 10 / TECHNOVA HACKATHON 2026</div><h3>VULNEX — Vulnerability Assessment Platform</h3><p>Python-based vulnerability scanning and reporting tool led by Team VORTEX. Combines Nmap-based host/service discovery, vulnerability identification, risk scoring, structured PDF reporting, and a Streamlit dashboard.</p><div class="chips"><span>Python</span><span>Nmap</span><span>Risk scoring</span><span>PDF reports</span><span>Streamlit</span></div><p><a href="https://github.com/AbyssTraveler08/vulnex" target="_blank" rel="noopener">View public VULNEX repository ↗</a></p></article><article class="card"><div class="label">INTEGRITY / MONITORING</div><h3>Secure File Transfer Monitoring</h3><p>File-activity monitoring and integrity verification using SHA-256, event correlation, logging, and a dashboard for reviewing events.</p><div class="chips"><span>Python</span><span>SHA-256</span><span>Monitoring</span></div><a href="https://github.com/AbyssTraveler08/Secure-File-Transfer" target="_blank" rel="noopener">View repository ↗</a></article><article class="card"><div class="label">MALWARE ANALYSIS</div><h3>PDF Malware Analysis Toolkit</h3><p>Examines embedded PDF objects and suspicious JavaScript or content to support structured initial forensic review.</p><div class="chips"><span>Python</span><span>PDF forensics</span><span>Reporting</span></div><a href="https://github.com/AbyssTraveler08/pdf-malware-analysis-toolkit" target="_blank" rel="noopener">View repository ↗</a></article><article class="card"><div class="label">NETWORK VISIBILITY</div><h3>Network Security Labs</h3><p>Hands-on practice with service discovery, packet inspection, network troubleshooting, and Linux-based analysis in controlled environments.</p><div class="chips"><span>Nmap</span><span>Wireshark</span><span>Linux</span></div><a href="https://tryhackme.com/p/abysstraveler02" target="_blank" rel="noopener">TryHackMe profile ↗</a></article><article class="card"><div class="label">SECURITY AWARENESS</div><h3>Phishing Awareness Session</h3><p>Co-delivered a phishing-awareness session with Shiva Mishra on 15 September 2026, focused on recognizing phishing indicators and safer digital habits.</p><div class="chips"><span>Awareness</span><span>Social engineering</span></div></article></div><p class="fine">All security testing is limited to authorized systems and controlled lab environments.</p></div></section>
 <section id="journey"><div class="wrap"><div class="section-head"><span class="num">03 /</span><div><div class="label">JOURNEY / EXPERIENCE</div><h2>Progress is a practice.</h2></div></div><div class="timeline"><article><div class="date">JAN — MAR 2026 · REMOTE</div><div><h3>Cyber Security Intern · Unified Mentor Private Limited</h3><p>Worked on simulated enterprise attack-and-defense projects. Assessed Linux privilege-escalation risks involving SUID binaries, weak permissions, and cron misconfigurations; contributed to SentinelShield, an intrusion-detection and web-protection system with traffic monitoring, anomaly detection, and real-time alerts. Recognized as a Top Performing Intern and awarded a ₹5,000 performance-based stipend.</p><div class="chips"><span>Linux security</span><span>Python</span><span>Threat detection</span></div></div></article><article><div class="date">CYART TECH</div><div><h3>SOC-domain Internship · CyArt Tech</h3><p>Contributed to QA and source-code review, UI validation, troubleshooting, and evidence-based reporting for a threat-intelligence platform.</p><div class="chips"><span>Validation</span><span>Troubleshooting</span><span>Technical reporting</span></div></div></article><article><div class="date">DEC 2025 — PRESENT</div><div><h3>Co-Tech Lead · Cyber Shield Center</h3><p>Lead a student cybersecurity club focused on security learning, CTFs, and campus awareness. Mentor members in Linux, networking, Python, Wireshark, Kali Linux, and security tooling; coordinate workshops and labs.</p></div></article><article><div class="date">2025 — 2029</div><div><h3>B.Tech · Computer Science — HRIT University</h3><p>Building a foundation in programming, data structures, operating systems, networking, and cybersecurity.</p></div></article></div></div></section>
 <section id="resume"><div class="wrap"><div class="section-head"><span class="num">04 /</span><div><div class="label">RESUME / DOWNLOAD</div><h2>Experience, skills &amp; projects.<br><span>In one document.</span></h2><p class="muted">Download my latest resume as a PDF for a concise overview of my experience, skills, education, and selected projects.</p></div></div><div class="resume"><div class="resume-card"><div class="pdf">PDF</div><div><b>Amar Kant Yadav — Resume</b><small>PDF · Downloadable copy</small></div></div><a class="btn primary" href="./Amar%27s%20Resume.pdf" download="Amar-Resume.pdf">Download resume ↓</a></div></div></section>
 <section id="contact"><div class="wrap"><div class="section-head"><span class="num">05 /</span><div><div class="label">CONTACT / OPEN CHANNEL</div><h2>Let's make systems<br><span>harder to break.</span></h2><p class="muted">I am actively open to cybersecurity job and internship opportunities, with a particular interest in SOC Analyst and VAPT roles where I can contribute to security monitoring, vulnerability assessment, and evidence-driven security analysis.</p></div></div><div class="contact"><div class="card"><h3>Direct contact</h3><a href="mailto:princeamarkant9@gmail.com">princeamarkant9@gmail.com ↗</a><p class="muted">Ghaziabad, Uttar Pradesh, India</p></div><div class="card"><h3>Profiles</h3><a href="https://github.com/AbyssTraveler08" target="_blank" rel="noopener">GitHub · AbyssTraveler08 ↗</a><a href="https://www.linkedin.com/in/amar-kant-yadav/" target="_blank" rel="noopener">LinkedIn · Amar Kant Yadav ↗</a><a href="https://tryhackme.com/p/abysstraveler02" target="_blank" rel="noopener">TryHackMe · abysstraveler02 ↗</a></div></div></div></section></main><footer><div class="wrap">AMAR KANT YADAV · LEARN CONTINUOUSLY. TEST RESPONSIBLY. BUILD SECURELY. <span style="float:right">STATIC HTML · NO BACKEND</span></div></footer></body></html>
