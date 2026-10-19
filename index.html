@@ -112,6 +112,17 @@ nav a:focus-visible,.btn:focus-visible,.quick-card:focus-visible{outline:3px sol
 .course-blue{--course-accent:#2c6799;--course-wash:#eef5fb}
 #courses{scroll-margin-top:96px}
 
+
+/* Scroll-reveal cards: enter the viewport, and gently reset when scrolled away */
+@media (prefers-reduced-motion: no-preference){
+  .reveal-card{opacity:0;transform:translateY(22px);transition:opacity .55s ease,transform .55s cubic-bezier(.2,.7,.2,1);will-change:opacity,transform}
+  .reveal-card.is-visible{opacity:1;transform:translateY(0)}
+  .reveal-card.reveal-reset{transition-duration:.38s}
+}
+@media (prefers-reduced-motion: reduce){
+  .reveal-card{opacity:1;transform:none;transition:none}
+}
+
 </style>
 </head>
 <body>
@@ -183,5 +194,31 @@ nav a:focus-visible,.btn:focus-visible,.quick-card:focus-visible{outline:3px sol
     });
   });
 })();
+</script>
+<script>
+
+(function(){
+  var reducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reducedMotion) return;
+  var cards = document.querySelectorAll('.card, .quick-card, .resume-panel');
+  cards.forEach(function(card){ card.classList.add('reveal-card'); });
+  if (!('IntersectionObserver' in window)) {
+    cards.forEach(function(card){ card.classList.add('is-visible'); });
+    return;
+  }
+  var observer = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(entry.isIntersecting){
+        entry.target.classList.add('is-visible');
+        entry.target.classList.remove('reveal-reset');
+      } else {
+        entry.target.classList.add('reveal-reset');
+        entry.target.classList.remove('is-visible');
+      }
+    });
+  }, {root:null, rootMargin:'0px 0px -8% 0px', threshold:0.08});
+  cards.forEach(function(card){ observer.observe(card); });
+})();
+
 </script>
 </body></html>
