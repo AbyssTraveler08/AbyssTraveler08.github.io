@@ -20,6 +20,24 @@ section{padding:54px 0 62px;border-top:1px solid var(--line)}.section-head{displ
 @media(max-width:850px){.nav-wrap{align-items:flex-start;flex-direction:column;padding:15px 0}.quick-grid{grid-template-columns:repeat(2,minmax(0,1fr));margin-bottom:48px}.intro{padding-top:55px}.section-head{align-items:flex-start;flex-direction:column}}
 @media(max-width:620px){nav{gap:9px 14px}nav a{font-size:11px}.intro-copy{font-size:16px}.grid,.contact-grid{grid-template-columns:1fr}.quick-grid{gap:10px}.quick-card{padding:16px;min-height:120px}.card{padding:20px}.skill-card{min-height:0}.skill-card .chips{margin-top:0}.timeline-card{grid-template-columns:1fr;gap:4px}.resume-panel{align-items:flex-start;flex-direction:column}section{padding:43px 0 49px}}
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+
+/* Subtle, consistent category accents — color supports scanning, not decoration */
+.skill-card{border-top:3px solid var(--skill-accent,#d7e0e8);background:linear-gradient(180deg,var(--skill-wash,#fff) 0%,#fff 52%);transition:transform .18s ease,border-color .18s ease,box-shadow .18s ease}
+.skill-card:hover{transform:translateY(-3px);border-color:var(--skill-border,#d7e0e8);box-shadow:0 9px 22px rgba(23,40,60,.06)}
+.skill-card .icon-box{background:var(--skill-wash,#f3f6f8);color:var(--skill-accent,var(--blue));border:1px solid var(--skill-border,#e0e7ee)}
+.skill-card .mini-label{color:var(--skill-accent,var(--muted))}
+.skill-card .chips span{background:var(--skill-wash,#f8fafc);border-color:var(--skill-border,#e0e7ee);color:var(--skill-text,#41546a)}
+.skill-red{--skill-accent:#a94f4b;--skill-wash:#fbf0ef;--skill-border:#ecd4d2;--skill-text:#85403d}
+.skill-blue{--skill-accent:#2c6799;--skill-wash:#eef5fb;--skill-border:#d4e3f0;--skill-text:#285a84}
+.skill-green{--skill-accent:#367451;--skill-wash:#eef7f0;--skill-border:#d4e7d8;--skill-text:#2f6647}
+.skill-amber{--skill-accent:#9a7138;--skill-wash:#f8f3e9;--skill-border:#e9dfc9;--skill-text:#795c30}
+/* Keep section destinations clear and make the header navigation reliably actionable */
+section[id]{scroll-margin-top:96px}
+.quick-card{cursor:pointer}
+nav a{display:inline-flex;align-items:center;min-height:36px;padding:7px 2px;border-bottom:2px solid transparent;transition:color .15s,border-color .15s}
+nav a:hover,nav a:focus-visible{color:var(--blue);border-bottom-color:var(--blue);outline:none}
+nav a:focus-visible,.btn:focus-visible,.quick-card:focus-visible{outline:3px solid #a9c9df;outline-offset:3px}
+
 </style>
 </head>
 <body>
@@ -39,10 +57,10 @@ section{padding:54px 0 62px;border-top:1px solid var(--line)}.section-head{displ
 </div>
 <section id="about"><div class="wrap"><div class="section-head"><div><div class="section-kicker">01 / About</div><h2>A little about how I work</h2></div><p>I like turning security concepts into practical tools, repeatable checks, and findings that are understandable and useful.</p></div><div class="grid"><article class="card"><div class="card-top"><span class="icon-box">01</span><div class="mini-label">MY APPROACH</div></div><h3>Practical, responsible testing</h3><p>I focus on learning through authorized labs and scoped projects, validating results before drawing conclusions, and documenting what the evidence actually shows.</p><div class="chips"><span>Responsible testing</span><span>Evidence-led analysis</span><span>Clear reporting</span></div></article><article class="card"><div class="card-top"><span class="icon-box">02</span><div class="mini-label">CURRENT FOCUS</div></div><h3>Security from both sides</h3><p>I’m developing both offensive and defensive fundamentals—from reconnaissance and vulnerability assessment to log review, baseline checks, and incident investigation.</p><div class="chips"><span>SOC</span><span>VAPT</span><span>Linux</span><span>Python</span></div></article></div></div></section>
 <section id="skills"><div class="wrap"><div class="section-head"><div><div class="section-kicker">02 / Skills</div><h2>Technical skills, grouped by focus</h2></div><p>Tools and concepts I’ve used in projects, training, and hands-on practice. Proficiency varies by tool and task.</p></div><div class="grid">
-<article class="card skill-card"><div class="card-top"><span class="icon-box">RT</span><div class="mini-label">OFFENSIVE SECURITY</div></div><h3>Red Team Skills</h3><p>Reconnaissance and controlled security testing to identify weaknesses and understand attack surfaces.</p><div class="chips"><span>Nmap</span><span>Subfinder</span><span>Amass</span><span>Burp Suite</span><span>Metasploit</span><span>Web testing</span><span>Linux privilege escalation</span><span>OWASP fundamentals</span></div></article>
-<article class="card skill-card"><div class="card-top"><span class="icon-box">BT</span><div class="mini-label">DEFENSIVE SECURITY</div></div><h3>Blue Team Skills</h3><p>Monitoring, log review, baseline validation, and security investigation fundamentals.</p><div class="chips"><span>SOC fundamentals</span><span>Log analysis</span><span>Incident response</span><span>Threat hunting</span><span>Splunk fundamentals</span><span>Wireshark</span><span>Security hardening</span><span>Risk reporting</span></div></article>
-<article class="card skill-card"><div class="card-top"><span class="icon-box">DEV</span><div class="mini-label">SCRIPTING & AUTOMATION</div></div><h3>Programming Skills</h3><p>Building small utilities and repeatable workflows for security checks, data collection, and reporting.</p><div class="chips"><span>Python</span><span>Bash</span><span>C</span><span>C++</span><span>YAML</span><span>Git & GitHub</span><span>Test automation</span><span>CLI tools</span><span>PDF reporting</span></div></article>
-<article class="card skill-card"><div class="card-top"><span class="icon-box">DF</span><div class="mini-label">ANALYSIS & EVIDENCE</div></div><h3>Digital Forensics Skills</h3><p>Initial artifact review, file-integrity checks, and documentation to support technical analysis.</p><div class="chips"><span>PDF artifact analysis</span><span>SHA-256</span><span>Metadata review</span><span>File activity logs</span><span>Evidence documentation</span><span>Packet inspection</span><span>Malware triage</span><span>Timeline fundamentals</span></div></article>
+<article class="card skill-card skill-red"><div class="card-top"><span class="icon-box">RT</span><div class="mini-label">OFFENSIVE SECURITY</div></div><h3>Red Team Skills</h3><p>Reconnaissance and controlled security testing to identify weaknesses and understand attack surfaces.</p><div class="chips"><span>Nmap</span><span>Subfinder</span><span>Amass</span><span>Burp Suite</span><span>Metasploit</span><span>Web testing</span><span>Linux privilege escalation</span><span>OWASP fundamentals</span></div></article>
+<article class="card skill-card skill-blue"><div class="card-top"><span class="icon-box">BT</span><div class="mini-label">DEFENSIVE SECURITY</div></div><h3>Blue Team Skills</h3><p>Monitoring, log review, baseline validation, and security investigation fundamentals.</p><div class="chips"><span>SOC fundamentals</span><span>Log analysis</span><span>Incident response</span><span>Threat hunting</span><span>Splunk fundamentals</span><span>Wireshark</span><span>Security hardening</span><span>Risk reporting</span></div></article>
+<article class="card skill-card skill-green"><div class="card-top"><span class="icon-box">DEV</span><div class="mini-label">SCRIPTING & AUTOMATION</div></div><h3>Programming Skills</h3><p>Building small utilities and repeatable workflows for security checks, data collection, and reporting.</p><div class="chips"><span>Python</span><span>Bash</span><span>C</span><span>C++</span><span>YAML</span><span>Git & GitHub</span><span>Test automation</span><span>CLI tools</span><span>PDF reporting</span></div></article>
+<article class="card skill-card skill-amber"><div class="card-top"><span class="icon-box">DF</span><div class="mini-label">ANALYSIS & EVIDENCE</div></div><h3>Digital Forensics Skills</h3><p>Initial artifact review, file-integrity checks, and documentation to support technical analysis.</p><div class="chips"><span>PDF artifact analysis</span><span>SHA-256</span><span>Metadata review</span><span>File activity logs</span><span>Evidence documentation</span><span>Packet inspection</span><span>Malware triage</span><span>Timeline fundamentals</span></div></article>
 </div></div></section>
 <section id="projects"><div class="wrap"><div class="section-head"><div><div class="section-kicker">03 / Projects</div><h2>Selected work & security tools</h2></div><p>Projects that demonstrate my interest in security automation, vulnerability assessment, and evidence-based analysis.</p></div><div class="grid project-grid">
 <article class="card feature"><span class="badge">FEATURED · TOP 10, TECHNOVA HACKATHON 2026</span><h3>VULNEX — Vulnerability Assessment Tool</h3><p>A Python-based vulnerability scanning and reporting project using Nmap, vulnerability analysis, risk scoring, and structured PDF reporting.</p><div class="chips"><span>Python</span><span>Nmap</span><span>Risk scoring</span><span>PDF reporting</span></div><a class="card-link" href="https://github.com/AbyssTraveler08/VULNEX" target="_blank" rel="noopener">View VULNEX on GitHub ↗</a></article>
@@ -71,4 +89,18 @@ section{padding:54px 0 62px;border-top:1px solid var(--line)}.section-head{displ
 <section id="contact"><div class="wrap"><div class="section-head"><div><div class="section-kicker">07 / Contact</div><h2>Let’s connect</h2></div><p>I’m open to SOC Analyst, VAPT, and related cybersecurity internships or entry-level opportunities where I can contribute, learn, and grow.</p></div><div class="contact-grid"><article class="card contact-card"><div class="card-top"><span class="icon-box">@</span><div class="mini-label">EMAIL</div></div><h3>Get in touch</h3><a href="mailto:princeamarkant9@gmail.com">princeamarkant9@gmail.com ↗</a><p>Ghaziabad, Uttar Pradesh, India</p></article><article class="card contact-card"><div class="card-top"><span class="icon-box">↗</span><div class="mini-label">PROFILES</div></div><h3>Find me online</h3><a href="https://github.com/AbyssTraveler08" target="_blank" rel="noopener">GitHub · AbyssTraveler08 ↗</a><a href="https://www.linkedin.com/in/amar-kant-yadav/" target="_blank" rel="noopener">LinkedIn · Amar Kant Yadav ↗</a><a href="https://tryhackme.com/p/abysstraveler02" target="_blank" rel="noopener">TryHackMe · abysstraveler02 ↗</a></article></div></div></section>
 </main>
 <footer><div class="wrap"><span>AMAR KANT YADAV · LEARN CONTINUOUSLY. TEST RESPONSIBLY. BUILD SECURELY.</span><span>Cybersecurity portfolio · GitHub Pages</span></div></footer>
+<script>
+(function(){
+  document.querySelectorAll('a[href^="#"]').forEach(function(link){
+    link.addEventListener('click',function(event){
+      var id=link.getAttribute('href').slice(1);
+      var target=document.getElementById(id);
+      if(!target)return;
+      event.preventDefault();
+      target.scrollIntoView({behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'start'});
+      if(history.replaceState) history.replaceState(null,'','#'+id);
+    });
+  });
+})();
+</script>
 </body></html>
