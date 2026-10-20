@@ -137,10 +137,24 @@ a{color:#245b86}
 a:focus-visible,button:focus-visible{outline:3px solid #b37b4a;outline-offset:3px;border-radius:5px}
 ::selection{background:#dceaf5;color:#15263a}
 
+
+/* TryHackMe public-progress panel */
+.thm-panel{border-top:3px solid #2c9b75;background:linear-gradient(120deg,#eef7f3 0%,#fff 62%);padding:26px}
+.thm-heading{display:flex;align-items:center;justify-content:space-between;gap:20px}
+.thm-heading h3{font-size:22px;margin:7px 0}
+.thm-heading p{margin:5px 0;color:#485a6f}
+.thm-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:22px}
+.thm-stat{border:1px solid #d9e8e1;background:rgba(255,255,255,.82);border-radius:13px;padding:16px}
+.thm-stat span{display:block;color:#536a62;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;margin-bottom:7px}
+.thm-stat strong{font-size:17px;overflow-wrap:anywhere}
+.thm-stat a{color:#24795b}
+.thm-note{font-size:12px!important;margin:18px 0 0!important;color:#5c6c67!important}
+@media(max-width:650px){.thm-heading{align-items:flex-start;flex-direction:column}.thm-stats{grid-template-columns:1fr}.thm-panel{padding:19px}}
+
 </style>
 </head>
 <body>
-<header><div class="wrap nav-wrap"><a class="brand" href="#top">AMAR KANT YADAV <span> / CYBERSECURITY</span></a><nav><a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#experience">Experience</a><a href="#certifications">Certifications</a><a href="#contact">Contact</a><a href="#courses">Courses</a></nav></div></header>
+<header><div class="wrap nav-wrap"><a class="brand" href="#top">AMAR KANT YADAV <span> / CYBERSECURITY</span></a><nav><a href="#about">About</a><a href="#tryhackme">TryHackMe</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#experience">Experience</a><a href="#certifications">Certifications</a><a href="#contact">Contact</a><a href="#courses">Courses</a></nav></div></header>
 <main id="top">
 <div class="wrap intro">
 <div class="eyebrow">Cybersecurity · SOC · VAPT · Security Automation</div>
@@ -155,6 +169,7 @@ a:focus-visible,button:focus-visible{outline:3px solid #b37b4a;outline-offset:3p
 <a class="quick-card" href="#projects"><span class="quick-icon">04</span><strong>Projects</strong><small>Tools, analysis, and security practice</small></a>
 </div>
 <section id="about"><div class="wrap"><div class="section-head"><div><div class="section-kicker">01 / About</div><h2>A little about how I work</h2></div><p>I like turning security concepts into practical tools, repeatable checks, and findings that are understandable and useful.</p></div><div class="grid"><article class="card"><div class="card-top"><span class="icon-box">01</span><div class="mini-label">MY APPROACH</div></div><h3>Practical, responsible testing</h3><p>I focus on learning through authorized labs and scoped projects, validating results before drawing conclusions, and documenting what the evidence actually shows.</p><div class="chips"><span>Responsible testing</span><span>Evidence-led analysis</span><span>Clear reporting</span></div></article><article class="card"><div class="card-top"><span class="icon-box">02</span><div class="mini-label">CURRENT FOCUS</div></div><h3>Security from both sides</h3><p>I’m developing both offensive and defensive fundamentals—from reconnaissance and vulnerability assessment to log review, baseline checks, and incident investigation.</p><div class="chips"><span>SOC</span><span>VAPT</span><span>Linux</span><span>Python</span></div></article></div></div></section>
+<section id="tryhackme"><div class="wrap"><div class="section-head"><div><div class="section-kicker">02 / Learning activity</div><h2>TryHackMe progress</h2></div><p>A snapshot of publicly available profile stats, with a direct link to my learning profile.</p></div><article class="card thm-panel"><div class="thm-heading"><div><div class="mini-label">HANDS-ON CYBERSECURITY PRACTICE</div><h3>TryHackMe · abysstraveler02</h3><p id="thm-status" aria-live="polite">Checking publicly available profile statistics…</p></div><a class="btn primary" href="https://tryhackme.com/p/abysstraveler02" target="_blank" rel="noopener noreferrer">Open profile ↗</a></div><div id="thm-stats" class="thm-stats"><div class="thm-stat"><span>Profile</span><strong>TryHackMe</strong></div><div class="thm-stat"><span>Live streak</span><strong>View on platform ↗</strong></div><div class="thm-stat"><span>Refresh</span><strong>On page visit</strong></div></div><p class="thm-note">Public stats refresh when this page loads and every 24 hours while it stays open. TryHackMe does not reliably expose the live streak through its public profile endpoint, so the streak link opens the official profile instead.</p></article></div></section>
 <section id="skills"><div class="wrap"><div class="section-head"><div><div class="section-kicker">02 / Skills</div><h2>Technical skills, grouped by focus</h2></div><p>Tools and concepts I’ve used in projects, training, and hands-on practice. Proficiency varies by tool and task.</p></div><div class="grid">
 <article class="card skill-card skill-red"><div class="card-top"><span class="icon-box">RT</span><div class="mini-label">OFFENSIVE SECURITY</div></div><h3>Red Team Skills</h3><p>Reconnaissance and controlled security testing to identify weaknesses and understand attack surfaces.</p><div class="chips"><span>Nmap</span><span>Subfinder</span><span>Amass</span><span>Burp Suite</span><span>Metasploit</span><span>Web testing</span><span>Linux privilege escalation</span><span>OWASP fundamentals</span></div></article>
 <article class="card skill-card skill-blue"><div class="card-top"><span class="icon-box">BT</span><div class="mini-label">DEFENSIVE SECURITY</div></div><h3>Blue Team Skills</h3><p>Monitoring, log review, baseline validation, and security investigation fundamentals.</p><div class="chips"><span>SOC fundamentals</span><span>Log analysis</span><span>Incident response</span><span>Threat hunting</span><span>Splunk fundamentals</span><span>Wireshark</span><span>Security hardening</span><span>Risk reporting</span></div></article>
@@ -232,6 +247,66 @@ a:focus-visible,button:focus-visible{outline:3px solid #b37b4a;outline-offset:3p
     });
   }, {root:null, rootMargin:'0px 0px -8% 0px', threshold:0.08});
   cards.forEach(function(card){ observer.observe(card); });
+})();
+
+</script>
+<script>
+
+(function(){
+  var profileUrl='https://tryhackme.com/api/v2/public-profile?username=abysstraveler02';
+  var status=document.getElementById('thm-status');
+  var stats=document.getElementById('thm-stats');
+  if(!status||!stats)return;
+  function valueFrom(obj,keys){
+    for(var i=0;i<keys.length;i++){var v=obj&&obj[keys[i]];if(v!==undefined&&v!==null&&v!==''&&typeof v!=='object')return v;}
+    return null;
+  }
+  function findProfile(data){
+    if(!data||typeof data!=='object')return null;
+    var candidates=[data,data.data,data.profile,data.user,data.data&&data.data.profile,data.data&&data.data.user];
+    for(var i=0;i<candidates.length;i++){
+      var c=candidates[i]; if(c&&typeof c==='object'&&(valueFrom(c,['username','userName','name','totalPoints','points','rank','roomsCompleted','completedRooms','level'])!==null))return c;
+    }
+    return data;
+  }
+  function stat(label,value,href){
+    var item=document.createElement('div');item.className='thm-stat';
+    var span=document.createElement('span');span.textContent=label;item.appendChild(span);
+    var strong=document.createElement('strong');
+    if(href){var a=document.createElement('a');a.href=href;a.target='_blank';a.rel='noopener noreferrer';a.textContent=value;strong.appendChild(a);}else strong.textContent=String(value);
+    item.appendChild(strong);return item;
+  }
+  function refresh(){
+    status.textContent='Refreshing public profile stats…';
+    fetch(profileUrl,{headers:{'Accept':'application/json'},cache:'no-store'})
+      .then(function(res){if(!res.ok)throw new Error('Public stats are temporarily unavailable');return res.json();})
+      .then(function(data){
+        var p=findProfile(data);
+        var points=valueFrom(p,['totalPoints','totalPoint','points','score']);
+        var rank=valueFrom(p,['rank','worldRank','globalRank']);
+        var rooms=valueFrom(p,['roomsCompleted','completedRooms','roomsCompletedCount','completedRoomCount']);
+        var level=valueFrom(p,['level','userLevel']);
+        var rows=[];
+        if(points!==null)rows.push(stat('Points',Number(points).toLocaleString()));
+        if(rank!==null)rows.push(stat('Rank',String(rank)));
+        if(rooms!==null)rows.push(stat('Rooms completed',String(rooms)));
+        if(level!==null)rows.push(stat('Level',String(level)));
+        rows.push(stat('Streak','View on TryHackMe ↗','https://tryhackme.com/p/abysstraveler02'));
+        if(rows.length===1)rows.unshift(stat('Public profile','Available','https://tryhackme.com/p/abysstraveler02'));
+        stats.replaceChildren.apply(stats,rows);
+        status.textContent='Public profile stats refreshed: '+new Date().toLocaleString();
+      })
+      .catch(function(){
+        stats.replaceChildren(
+          stat('Public profile','Open profile ↗','https://tryhackme.com/p/abysstraveler02'),
+          stat('Live streak','View on platform ↗','https://tryhackme.com/p/abysstraveler02'),
+          stat('Stats status','Temporarily unavailable')
+        );
+        status.textContent='TryHackMe did not provide public stats this time. The profile link remains available.';
+      });
+  }
+  refresh();
+  window.setInterval(refresh,24*60*60*1000);
 })();
 
 </script>
