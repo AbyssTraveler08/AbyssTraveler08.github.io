@@ -297,17 +297,24 @@ section:nth-of-type(3n):after{right:auto;left:-195px;top:auto;bottom:-195px;widt
 .section-graphic,.hero-visual{box-shadow:0 12px 30px rgba(23,55,64,.045)}
 @media(max-width:700px){body{background-size:auto,auto,28px 28px,28px 28px;background-attachment:scroll}.intro:before{width:80%;right:-25%;opacity:.7}.intro:after{width:125px;height:125px;right:0;top:7%}section:before{background-size:32px 32px}section:after{width:220px;height:220px;right:-155px;opacity:.65}}
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+/* Simplified opening section: professional summary only */
+.summary-intro{display:block;padding:72px 0 58px}
+.summary-panel{max-width:100%;padding:42px 46px;background:rgba(255,255,255,.86);border:1px solid var(--line);border-radius:22px;box-shadow:0 12px 32px rgba(23,40,60,.045)}
+.summary-panel .section-kicker{color:#8b6a3e}
+.summary-panel h1{font-size:clamp(30px,4vw,44px);line-height:1.15;letter-spacing:-.04em;margin:12px 0 18px;max-width:none}
+.summary-panel .intro-copy{max-width:100%;font-size:17px;line-height:1.9;color:#536276}
+@media(max-width:620px){.summary-intro{padding:38px 0 36px}.summary-panel{padding:26px 22px}.summary-panel .intro-copy{font-size:15px;line-height:1.8}}
 </style>
 </head>
 <body>
 <header><div class="wrap nav-wrap"><a class="brand" href="#top">AMAR KANT YADAV <span> / CYBERSECURITY</span></a><nav><a href="#about">About</a><a href="#labs">Labs</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#writing">Writing</a><a href="#education">Education</a><a href="#experience">Experience</a><a href="#certifications">Certifications</a><a href="#contact">Contact</a></nav></div></header>
 <main id="top">
-<div class="wrap intro">
-<div class="eyebrow">Cybersecurity · SOC · VAPT · Security Automation</div>
-<h1>Find the weakness.<br><span>Understand the threat.</span><br>Build the defence.</h1>
-<p class="intro-copy">I work at the intersection of <strong>offensive testing and defensive security</strong> — exploring how systems fail, how threats surface, and how security teams can respond. I’m Amar, a Computer Science undergraduate building hands-on experience in SOC operations, VAPT, and security automation. From vulnerability assessment tools and Linux security checks to baseline validation and threat-intelligence workflows, I turn learning into practical projects, testable outcomes, and clear technical documentation.</p>
-<div class="hero-visual" aria-label="Illustration of a cybersecurity workflow"><div class="visual-top"><span class="visual-dot"></span><span>SECURITY WORKFLOW</span><span class="visual-live">PRACTICAL · EVIDENCE-LED</span></div><div class="visual-core"><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><div class="core-shield"><span>◈</span><small>SECURITY</small></div><div class="orbit-node node-one"><b>01</b><span>ASSESS</span></div><div class="orbit-node node-two"><b>02</b><span>MONITOR</span></div><div class="orbit-node node-three"><b>03</b><span>ANALYZE</span></div><div class="orbit-node node-four"><b>04</b><span>REPORT</span></div></div><div class="visual-bottom"><div><span class="visual-mini-label">FOCUS AREAS</span><strong>SOC <i>·</i> VAPT <i>·</i> AUTOMATION</strong></div><div class="signal-bars" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div></div></div>
-<div class="intro-bottom"><div class="availability">Open to SOC Analyst, VAPT, and cybersecurity internship opportunities</div><div class="actions"><a class="btn primary" href="#projects">Explore my work ↘</a><a class="btn" href="mailto:princeamarkant9@gmail.com">Contact me ↗</a></div></div>
+<div class="wrap intro summary-intro">
+<div class="summary-panel">
+<div class="section-kicker">PROFESSIONAL SUMMARY</div>
+<h1>Professional Summary</h1>
+<p class="intro-copy">Computer Science undergraduate focused on cybersecurity, with hands-on experience across security operations, vulnerability assessment, penetration testing fundamentals, and security automation. Skilled in building Python-based security tools, validating system configurations against security baselines, investigating technical findings, and documenting evidence clearly. Through internships, practical labs, and independent projects, I have developed an analytical, detail-oriented approach to identifying security weaknesses and supporting defensive improvements. Seeking opportunities in SOC analysis, VAPT, and cybersecurity where I can contribute my technical skills while continuing to grow.</p>
+</div>
 </div>
 <div class="wrap quick-grid">
 <a class="quick-card" href="#skills"><span class="quick-icon">01</span><strong>Technical Skills</strong><small>Red team · Blue team · Code · Forensics</small></a>
