@@ -504,6 +504,20 @@ footer{color:#a89ab9!important}footer .wrap{border-color:rgba(163,106,210,.16)!i
 #portfolio-welcome .welcome-word:after{content:"▋";display:inline-block;margin-left:.12em;color:#a4ffc8;animation:terminal-caret .72s steps(1) infinite}
 #portfolio-welcome .welcome-name{font-family:"Brush Script MT","Segoe Script","Lucida Handwriting",cursive!important;font-style:italic!important;font-weight:600!important;letter-spacing:.035em!important;font-size:clamp(36px,7vw,84px)!important;color:#a3ffbd!important;text-shadow:0 0 18px rgba(65,255,142,.28),0 2px 0 rgba(0,28,10,.7)!important}
 @keyframes terminal-caret{50%{opacity:0}}
+</style><style id="welcome-text-visibility-fix">
+#portfolio-welcome{z-index:100000!important;background:radial-gradient(ellipse at center,rgba(5,30,16,.98),rgba(0,5,2,.995) 78%)!important}
+#portfolio-welcome .welcome-inner{z-index:10!important;opacity:1!important;visibility:visible!important}
+#portfolio-welcome .welcome-word{opacity:0;color:#65ff9e!important;-webkit-text-fill-color:#65ff9e!important;background:none!important;-webkit-background-clip:border-box!important;background-clip:border-box!important;filter:none!important;text-shadow:0 0 12px rgba(74,255,143,.5)!important}
+#portfolio-welcome .welcome-word.visible{opacity:1!important;visibility:visible!important}
+#portfolio-welcome .welcome-name{opacity:0!important;color:#b4ffc9!important;-webkit-text-fill-color:#b4ffc9!important;visibility:visible!important;font-family:"Brush Script MT","Segoe Script","Lucida Handwriting",cursive!important;font-style:italic!important;font-weight:700!important;font-size:clamp(42px,7vw,88px)!important;text-shadow:0 0 20px rgba(65,255,142,.35)!important}
+#portfolio-welcome .welcome-name.visible{opacity:1!important}
+#portfolio-welcome .welcome-sub{opacity:0!important;color:#a4ffc6!important;visibility:visible!important}
+#portfolio-welcome .welcome-sub.visible{opacity:1!important}
+#portfolio-welcome .welcome-rule{opacity:1!important}
+#portfolio-assembly{background:radial-gradient(ellipse at center,rgba(5,20,12,.35),rgba(0,3,2,.65))!important}
+.assembly-copy{opacity:1!important;visibility:visible!important}
+.assembly-copy .label,.assembly-copy p{color:#65ff9e!important;text-shadow:0 0 12px rgba(65,255,142,.3)!important}
+.assembly-copy h2{color:#d8ffe5!important;text-shadow:0 0 20px rgba(65,255,142,.22)!important}
 </style></head>
 <body>
 <canvas id="matrix-rain" aria-hidden="true"></canvas>
