@@ -476,6 +476,19 @@ footer{color:#a89ab9!important}footer .wrap{border-color:rgba(163,106,210,.16)!i
 #skills .skill-card .chips span{background:color-mix(in srgb,var(--skill-accent) 9%,#100b1b)!important;border-color:color-mix(in srgb,var(--skill-accent) 30%,transparent)!important;color:var(--skill-text)!important}
 #skills .skill-card{box-shadow:0 0 0 1px color-mix(in srgb,var(--skill-accent) 8%,transparent),0 16px 45px rgba(0,0,0,.16)}
 #skills .skill-card:hover{box-shadow:0 0 24px color-mix(in srgb,var(--skill-accent) 12%,transparent)}
+</style><style id="skill-colors-and-matrix-removal">
+/* Clear, consistent color identity for the four skill domains */
+#skills .skill-red{--skill-accent:#ff465e;--skill-border:#7d2638;--skill-text:#ffdce2}
+#skills .skill-blue{--skill-accent:#48aaff;--skill-border:#245c91;--skill-text:#d9edff}
+#skills .skill-green{--skill-accent:#55dc8b;--skill-border:#286543;--skill-text:#ddffeb}
+#skills .skill-purple{--skill-accent:#be83ff;--skill-border:#633a8c;--skill-text:#f0e2ff}
+#skills .skill-card{background:rgba(15,10,25,.9)!important;border-color:color-mix(in srgb,var(--skill-accent) 42%,#251633)!important}
+#skills .skill-card .icon-box{background:color-mix(in srgb,var(--skill-accent) 13%,#100b1b)!important;border-color:color-mix(in srgb,var(--skill-accent) 48%,transparent)!important;color:var(--skill-accent)!important}
+#skills .skill-card .mini-label{color:var(--skill-accent)!important}
+#skills .skill-card .chips span{background:color-mix(in srgb,var(--skill-accent) 11%,#100b1b)!important;border-color:color-mix(in srgb,var(--skill-accent) 38%,transparent)!important;color:var(--skill-text)!important}
+#skills .skill-card:hover{box-shadow:0 0 24px color-mix(in srgb,var(--skill-accent) 17%,transparent)!important;border-color:var(--skill-accent)!important}
+/* Remove the green Matrix/hacking rain from the site background */
+#matrix-rain{display:none!important;opacity:0!important;visibility:hidden!important}
 </style></head>
 <body>
 <canvas id="matrix-rain" aria-hidden="true"></canvas>
@@ -656,7 +669,7 @@ footer{color:#a89ab9!important}footer .wrap{border-color:rgba(163,106,210,.16)!i
 </script><script>
 (function(){
  const canvas=document.getElementById('matrix-rain'),ctx=canvas&&canvas.getContext('2d');
- if(ctx&&!matchMedia('(prefers-reduced-motion: reduce)').matches){
+ if(false&&ctx&&!matchMedia('(prefers-reduced-motion: reduce)').matches){
   let w,h,cols,drops,fs=14;
   function resize(){w=canvas.width=innerWidth;h=canvas.height=innerHeight;cols=Math.ceil(w/fs);drops=Array(cols).fill(1)}
   resize();addEventListener('resize',resize,{passive:true});
