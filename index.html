@@ -541,6 +541,12 @@ footer{color:#a89ab9!important}footer .wrap{border-color:rgba(163,106,210,.16)!i
 #portfolio-welcome .welcome-rule{opacity:1!important;background:#00ff75!important}
 </style><style id="welcome-name-no-italic">
 #portfolio-welcome .welcome-name,#portfolio-welcome .welcome-name.visible{font-style:normal!important;font-family:"Trebuchet MS","Arial",sans-serif!important;font-weight:800!important;letter-spacing:.04em!important}
+</style><style id="assembly-black-to-home-reveal">
+/* Assembly begins on pure black, then reveals the homepage underneath */
+#portfolio-assembly{background:#000!important;opacity:0!important;visibility:hidden!important;transition:opacity .8s ease,visibility .8s ease!important}
+#portfolio-assembly.active{opacity:1!important;visibility:visible!important;animation:assembly-black-reveal 3s ease forwards!important}
+#portfolio-assembly.dismissed{opacity:0!important;visibility:hidden!important;animation:none!important}
+@keyframes assembly-black-reveal{0%{background:#000!important}100%{background:rgba(0,0,0,0)!important}}
 </style></head>
 <body>
 <canvas id="matrix-rain" aria-hidden="true"></canvas>
