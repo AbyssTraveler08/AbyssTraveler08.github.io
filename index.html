@@ -547,6 +547,13 @@ footer{color:#a89ab9!important}footer .wrap{border-color:rgba(163,106,210,.16)!i
 #portfolio-assembly.active{opacity:1!important;visibility:visible!important;animation:assembly-black-reveal 3s ease forwards!important}
 #portfolio-assembly.dismissed{opacity:0!important;visibility:hidden!important;animation:none!important}
 @keyframes assembly-black-reveal{0%{background:#000!important}100%{background:rgba(0,0,0,0)!important}}
+</style><style id="assembly-3d-layer-repair">
+/* Keep the black reveal layer behind the actual 3D flight, not over it */
+#cinematic-scene{z-index:99999!important;opacity:1!important;visibility:visible!important}
+#portfolio-assembly{z-index:99998!important;background:#000!important;opacity:1!important;visibility:hidden!important;transition:background-color 3s ease,opacity .8s ease,visibility .8s ease!important}
+#portfolio-assembly.active{opacity:1!important;visibility:visible!important;background-color:rgba(0,0,0,0)!important}
+#portfolio-assembly .assembly-copy{position:relative!important;z-index:100000!important}
+#portfolio-assembly.dismissed{opacity:0!important;visibility:hidden!important;pointer-events:none!important}
 </style></head>
 <body>
 <canvas id="matrix-rain" aria-hidden="true"></canvas>
