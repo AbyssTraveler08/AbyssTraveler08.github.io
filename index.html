@@ -329,6 +329,18 @@ section:before{transition:opacity .6s ease}
 section:hover:before{opacity:.9}
 @media(hover:hover){.card:hover .card-link{color:var(--accent,#3d7480)}}
 @media(prefers-reduced-motion:reduce){:root{scroll-behavior:auto}*,*:before,*:after{animation:none!important;transition:none!important;transform:none!important}.motion-reveal{opacity:1!important}}
+/* Stronger, clearly perceptible motion polish */
+.motion-reveal{opacity:0;transform:translateY(42px);transition:opacity .85s cubic-bezier(.2,.7,.2,1),transform .85s cubic-bezier(.2,.7,.2,1)}
+.motion-reveal.motion-visible{opacity:1;transform:translateY(0)}
+.motion-reveal[data-motion="left"]{transform:translateX(-46px)}
+.motion-reveal[data-motion="right"]{transform:translateX(46px)}
+.motion-reveal[data-motion="left"].motion-visible,.motion-reveal[data-motion="right"].motion-visible{transform:translateX(0)}
+.card:hover,.certificate-card:hover,.project-card:hover,.skill-card:hover,.lab-card:hover,.writing-card:hover{transform:translateY(-8px) scale(1.012);box-shadow:0 22px 48px rgba(21,42,56,.13);border-color:rgba(69,112,122,.36)}
+.project-card:hover .project-media img,.project-card:hover .project-media video{transform:scale(1.035)}
+.project-card .project-media img,.project-card .project-media video{transition:transform .65s cubic-bezier(.2,.7,.2,1)}
+section:after{animation:ambient-orbit 26s linear infinite}
+@keyframes ambient-orbit{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+@media(prefers-reduced-motion:reduce){section:after{animation:none!important}}
 </style>
 </head>
 <body>
@@ -502,12 +514,13 @@ section:hover:before{opacity:.9}
 </script>
 <script>
 (function(){
-  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var candidates=document.querySelectorAll('section .section-kicker, section h2, section .card, section .section-graphic, section .certificate-card, section .project-card, section .skill-card, section .lab-card, section .writing-card');
-  if(reduce){candidates.forEach(function(el){el.classList.add('motion-visible');});return;}
-  candidates.forEach(function(el,index){if(el.classList.contains('motion-reveal'))return;el.classList.add('motion-reveal');if(el.matches('.card,.project-card,.certificate-card'))el.dataset.motion=index%2?'right':'left';});
-  if(!('IntersectionObserver' in window)){candidates.forEach(function(el){el.classList.add('motion-visible');});return;}
-  var observer=new IntersectionObserver(function(entries){entries.forEach(function(entry){if(entry.isIntersecting){entry.target.classList.add('motion-visible');observer.unobserve(entry.target);}});},{threshold:.12,rootMargin:'0px 0px -40px 0px'});
-  candidates.forEach(function(el){observer.observe(el);});
+ var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+ var selectors='section .section-kicker, section h2, section .card, section .section-graphic, section .certificate-card, section .project-card, section .skill-card, section .lab-card, section .writing-card';
+ var items=document.querySelectorAll(selectors);
+ if(reduce){items.forEach(function(el){el.classList.add('motion-visible');});return;}
+ items.forEach(function(el,i){el.classList.add('motion-reveal');if(el.matches('.card,.project-card,.certificate-card'))el.dataset.motion=(i%2?'right':'left');});
+ if(!window.IntersectionObserver){items.forEach(function(el){el.classList.add('motion-visible');});return;}
+ var observer=new IntersectionObserver(function(entries){entries.forEach(function(entry){if(entry.isIntersecting){entry.target.classList.add('motion-visible');observer.unobserve(entry.target);}});},{threshold:.08,rootMargin:'0px 0px -25px 0px'});
+ items.forEach(function(el){observer.observe(el);});
 })();
 </script></body></html>
