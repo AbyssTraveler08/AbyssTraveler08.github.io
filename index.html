@@ -304,6 +304,31 @@ section:nth-of-type(3n):after{right:auto;left:-195px;top:auto;bottom:-195px;widt
 .summary-panel h1{font-size:clamp(30px,4vw,44px);line-height:1.15;letter-spacing:-.04em;margin:12px 0 18px;max-width:none}
 .summary-panel .intro-copy{max-width:100%;font-size:17px;line-height:1.9;color:#536276}
 @media(max-width:620px){.summary-intro{padding:38px 0 36px}.summary-panel{padding:26px 22px}.summary-panel .intro-copy{font-size:15px;line-height:1.8}}
+/* Premium cybersecurity portfolio motion layer — content and section order unchanged */
+:root{scroll-behavior:smooth}
+body{background-attachment:fixed}
+nav a{position:relative;transition:color .22s ease,background .22s ease,transform .22s ease}
+nav a:hover{transform:translateY(-2px)}
+.card,.certificate-card,.project-card,.skill-card,.lab-card,.writing-card{transition:transform .35s cubic-bezier(.2,.7,.2,1),box-shadow .35s ease,border-color .3s ease}
+.card:hover,.certificate-card:hover,.project-card:hover,.skill-card:hover,.lab-card:hover,.writing-card:hover{transform:translateY(-5px);box-shadow:0 18px 40px rgba(21,42,56,.095);border-color:rgba(69,112,122,.28)}
+.btn,.card-link,.profile-button{transition:transform .22s ease,box-shadow .22s ease,background .22s ease,color .22s ease}
+.btn:hover,.profile-button:hover{transform:translateY(-2px);box-shadow:0 9px 22px rgba(28,63,77,.12)}
+.section-graphic,.hero-visual{transition:transform .45s ease,box-shadow .45s ease}
+.section-graphic:hover,.hero-visual:hover{transform:translateY(-3px) scale(1.008)}
+section>.wrap{transition:opacity .7s ease}
+.motion-reveal{opacity:0;transform:translateY(26px);transition:opacity .72s cubic-bezier(.2,.7,.2,1),transform .72s cubic-bezier(.2,.7,.2,1)}
+.motion-reveal.motion-visible{opacity:1;transform:translateY(0)}
+.motion-reveal[data-motion="left"]{transform:translateX(-28px)}
+.motion-reveal[data-motion="right"]{transform:translateX(28px)}
+.motion-reveal[data-motion="left"].motion-visible,.motion-reveal[data-motion="right"].motion-visible{transform:translateX(0)}
+.card.motion-reveal:nth-child(2),.project-card.motion-reveal:nth-child(2){transition-delay:.06s}
+.card.motion-reveal:nth-child(3),.project-card.motion-reveal:nth-child(3){transition-delay:.12s}
+.card.motion-reveal:nth-child(4),.project-card.motion-reveal:nth-child(4){transition-delay:.18s}
+.section-kicker{letter-spacing:.14em}
+section:before{transition:opacity .6s ease}
+section:hover:before{opacity:.9}
+@media(hover:hover){.card:hover .card-link{color:var(--accent,#3d7480)}}
+@media(prefers-reduced-motion:reduce){:root{scroll-behavior:auto}*,*:before,*:after{animation:none!important;transition:none!important;transform:none!important}.motion-reveal{opacity:1!important}}
 </style>
 </head>
 <body>
@@ -475,4 +500,14 @@ section:nth-of-type(3n):after{right:auto;left:-195px;top:auto;bottom:-195px;widt
  document.addEventListener('keydown',function(event){if(event.key==='Escape'&&modal&&modal.classList.contains('is-open'))closePreview();});
 })();
 </script>
-</body></html>
+<script>
+(function(){
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var candidates=document.querySelectorAll('section .section-kicker, section h2, section .card, section .section-graphic, section .certificate-card, section .project-card, section .skill-card, section .lab-card, section .writing-card');
+  if(reduce){candidates.forEach(function(el){el.classList.add('motion-visible');});return;}
+  candidates.forEach(function(el,index){if(el.classList.contains('motion-reveal'))return;el.classList.add('motion-reveal');if(el.matches('.card,.project-card,.certificate-card'))el.dataset.motion=index%2?'right':'left';});
+  if(!('IntersectionObserver' in window)){candidates.forEach(function(el){el.classList.add('motion-visible');});return;}
+  var observer=new IntersectionObserver(function(entries){entries.forEach(function(entry){if(entry.isIntersecting){entry.target.classList.add('motion-visible');observer.unobserve(entry.target);}});},{threshold:.12,rootMargin:'0px 0px -40px 0px'});
+  candidates.forEach(function(el){observer.observe(el);});
+})();
+</script></body></html>
