@@ -405,7 +405,36 @@ section.cursor-active .cursor-swarm{opacity:1}
 @media(max-width:760px){.summary-panel:before{font-size:70px;top:12%;opacity:.28}.summary-panel:after{animation-duration:30s}section[data-motion-type] .card:hover,section[data-motion-type] .project-card:hover{transform:none!important}}
 @media(prefers-reduced-motion:reduce){.summary-panel:after,.resume-float,section[data-motion-type="resume"] .card{animation:none!important}.cursor-swarm{display:none}}
 </style>
-</head>
+<style id="cinematic-3d-system">
+:root{--scene-bg:#080610;--scene-violet:#6c2bbd;--scene-red:#ff244e;--scene-cyan:#39e7ff}
+html,body{background:#080610!important;color:#e8e5f4!important}
+body{overflow-x:hidden;background-image:radial-gradient(ellipse at 50% 15%,rgba(81,31,137,.28),transparent 58%),linear-gradient(180deg,#080610,#10091a 65%,#080610)!important}
+#cinematic-scene{position:fixed;inset:0;width:100%;height:100%;z-index:1;pointer-events:none}
+header,main,footer{position:relative;z-index:2}
+header{background:rgba(8,6,16,.72)!important;border-color:rgba(180,100,255,.18)!important}
+.brand,nav a{color:#d9d2ef!important}nav a:hover{color:#ff315a!important;border-color:#ff315a!important}
+.summary-panel{min-height:70vh;display:flex;flex-direction:column;justify-content:center;padding:clamp(30px,7vw,90px)!important;background:linear-gradient(120deg,rgba(8,6,16,.88),rgba(17,10,31,.7))!important;border:1px solid rgba(170,80,255,.22)!important;box-shadow:0 30px 100px rgba(0,0,0,.4),inset 0 0 55px rgba(99,29,190,.09)!important;backdrop-filter:blur(7px)}
+.summary-panel:before{font-size:clamp(75px,17vw,240px)!important;top:28%!important;left:0!important;color:transparent!important;-webkit-text-stroke:1px rgba(255,35,83,.5)!important;opacity:.65!important;transform:translateZ(-90px)!important}
+.summary-panel:after{background:linear-gradient(110deg,transparent 25%,rgba(89,235,255,.05),rgba(255,31,75,.09),transparent 70%)!important;animation:hero-light-pass 7s ease-in-out infinite!important}
+@keyframes hero-light-pass{0%,100%{transform:translateX(-35%) rotate(-8deg)}50%{transform:translateX(35%) rotate(8deg)}}
+.summary-panel h1{font-size:clamp(42px,7vw,90px)!important;line-height:.98!important;color:#f8f4ff!important;text-shadow:0 0 28px rgba(177,67,255,.22),3px 2px 0 rgba(255,36,78,.22)!important}
+.summary-panel .section-kicker{color:#ff315a!important}.summary-panel .intro-copy{max-width:850px;color:#c6bdd8!important;font-size:clamp(15px,1.4vw,19px)!important}
+section{border-color:rgba(163,106,210,.16)!important;background:transparent!important;overflow:visible!important;transform-style:preserve-3d}
+section .section-head h2{color:#f0e9ff!important}
+section .section-kicker,section .mini-label{color:#c478ff!important}
+section .section-head>p,section p,section li{color:#bdb3ce!important}
+.card,.quick-card,.resume-panel,.project-media,.certificate-modal-panel{background:rgba(17,12,28,.83)!important;color:#eee8fa!important;border-color:rgba(157,91,204,.22)!important;box-shadow:0 18px 42px rgba(0,0,0,.24)!important;backdrop-filter:blur(10px)}
+.card h3,.card strong,.resume-info strong{color:#f2ebff!important}
+.chips span,.badge{background:rgba(82,33,124,.18)!important;border-color:rgba(169,96,216,.25)!important;color:#cfc1e5!important}
+.icon-box,.quick-icon,.pdf-icon{background:rgba(107,41,158,.18)!important;border-color:rgba(167,97,215,.25)!important;color:#ce9bff!important}
+.btn{background:rgba(20,12,32,.9)!important;color:#e9dfff!important;border-color:rgba(178,96,228,.32)!important}
+.btn.primary{background:linear-gradient(110deg,#7529ba,#c21c48)!important;border-color:#9e2ec2!important;color:white!important}
+.quick-card strong{color:#f2ebff!important}.quick-card small{color:#b7a9cb!important}
+footer{color:#a89ab9!important}footer .wrap{border-color:rgba(163,106,210,.16)!important}
+.cursor-swarm{mix-blend-mode:screen}
+@media(max-width:760px){.summary-panel{min-height:auto!important}.summary-panel:before{font-size:68px!important;top:18%!important}}
+@media(prefers-reduced-motion:reduce){#cinematic-scene{display:none!important}}
+</style></head>
 <body>
 <canvas id="matrix-rain" aria-hidden="true"></canvas>
 
@@ -630,4 +659,29 @@ section.cursor-active .cursor-swarm{opacity:1}
   animate();
  });
 })();
+</script><script id="cinematic-3d-engine">
+(()=>{if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+const canvas=document.createElement('canvas');canvas.id='cinematic-scene';document.body.prepend(canvas);
+const load=src=>new Promise((resolve,reject)=>{const s=document.createElement('script');s.src=src;s.onload=resolve;s.onerror=reject;document.head.appendChild(s)});
+load('https://cdnjs.cloudflare.com/ajax/libs/three.js/r152/three.min.js').then(()=>{
+ if(!window.THREE)return;
+ const T=window.THREE,renderer=new T.WebGLRenderer({canvas,alpha:true,antialias:true});renderer.setPixelRatio(Math.min(devicePixelRatio,1.7));renderer.setSize(innerWidth,innerHeight);renderer.setClearColor(0,0);
+ const scene=new T.Scene();scene.fog=new T.FogExp2(0x080610,.032);
+ const camera=new T.PerspectiveCamera(52,innerWidth/innerHeight,.1,120);camera.position.set(0,0,17);
+ scene.add(new T.AmbientLight(0x8a69bb,.8));const key=new T.PointLight(0x9d3aff,30,40);key.position.set(4,5,9);scene.add(key);
+ const red=new T.PointLight(0xff1748,22,35);red.position.set(-7,-3,6);scene.add(red);
+ const cyan=new T.PointLight(0x2ceaff,12,30);cyan.position.set(7,-4,5);scene.add(cyan);
+ const group=new T.Group();scene.add(group);
+ const mats=[new T.MeshStandardMaterial({color:0x321052,metalness:.7,roughness:.22,emissive:0x21043b}),new T.MeshStandardMaterial({color:0x6e1644,metalness:.75,roughness:.25,emissive:0x2a0615}),new T.MeshStandardMaterial({color:0x1a2c55,metalness:.7,roughness:.2,emissive:0x06172b})];
+ const geometries=[new T.IcosahedronGeometry(1,1),new T.TorusKnotGeometry(.62,.18,90,12),new T.OctahedronGeometry(1.15,0),new T.BoxGeometry(1.15,1.15,1.15)];
+ const objects=[];for(let i=0;i<17;i++){const mesh=new T.Mesh(geometries[i%geometries.length],mats[i%mats.length]);mesh.position.set((Math.random()-.5)*24,(Math.random()-.5)*15,(Math.random()-.5)*12-2);mesh.rotation.set(Math.random()*6,Math.random()*6,Math.random()*6);mesh.scale.setScalar(.18+Math.random()*.8);group.add(mesh);objects.push({mesh,seed:Math.random()*10,base:mesh.position.clone(),speed:.15+Math.random()*.45});}
+ const wire=new T.Mesh(new T.IcosahedronGeometry(6,1),new T.MeshBasicMaterial({color:0x6e28a8,wireframe:true,transparent:true,opacity:.09));wire.position.set(0,0,-4);group.add(wire);
+ const particleGeo=new T.BufferGeometry(),count=650,positions=new Float32Array(count*3);for(let i=0;i<count;i++){positions[i*3]=(Math.random()-.5)*42;positions[i*3+1]=(Math.random()-.5)*26;positions[i*3+2]=(Math.random()-.5)*32;}particleGeo.setAttribute('position',new T.BufferAttribute(positions,3));const particles=new T.Points(particleGeo,new T.PointsMaterial({color:0xb37aff,size:.035,transparent:true,opacity:.65}));scene.add(particles);
+ let mx=0,my=0,tx=0,ty=0,scroll=0;addEventListener('pointermove',e=>{mx=e.clientX/innerWidth-.5;my=e.clientY/innerHeight-.5},{passive:true});addEventListener('scroll',()=>{scroll=scrollY/Math.max(1,document.body.scrollHeight-innerHeight)},{passive:true});
+ const clock=new T.Clock();function animate(){requestAnimationFrame(animate);const t=clock.getElapsedTime();tx+=(mx-tx)*.035;ty+=(my-ty)*.035;camera.position.x=tx*1.5;camera.position.y=-ty*1.2+Math.sin(t*.12)*.18;camera.position.z=17-scroll*2.2;camera.lookAt(tx*1.1,-scroll*2.4,0);group.rotation.y=t*.045+tx*.1;group.rotation.x=Math.sin(t*.16)*.06;wire.rotation.y=-t*.04;wire.rotation.x=t*.025;particles.rotation.y=t*.012;particles.rotation.x=t*.005;objects.forEach(o=>{o.mesh.rotation.x+=o.speed*.003;o.mesh.rotation.y+=o.speed*.004;o.mesh.position.y=o.base.y+Math.sin(t*.45+o.seed)*.24;o.mesh.position.x=o.base.x+Math.sin(t*.2+o.seed)*.12});key.intensity=26+Math.sin(t*1.3)*4;red.intensity=18+Math.sin(t*.7+1)*4;renderer.render(scene,camera)}
+ animate();addEventListener('resize',()=>{camera.aspect=innerWidth/innerHeight;camera.updateProjectionMatrix();renderer.setSize(innerWidth,innerHeight);renderer.setPixelRatio(Math.min(devicePixelRatio,1.7)},{passive:true});
+}).catch(()=>{canvas.style.display='none'});
+})();
+</script><script id="cinematic-section-motion">
+(()=>{if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;const secs=[...document.querySelectorAll('main section')];const presets=['rotateX(5deg) translateY(35px)','translateZ(-70px) rotateY(-6deg)','rotateY(8deg) translateX(40px)','translateZ(60px) rotateX(-4deg)','rotateX(10deg) scale(.94)','translateZ(-40px) rotateY(5deg)','rotateY(-8deg) translateZ(50px)','rotateX(-6deg) translateY(24px)'];const io=new IntersectionObserver(entries=>entries.forEach(e=>{const i=secs.indexOf(e.target);if(e.isIntersecting){e.target.style.transform='translateZ(0) rotateX(0) rotateY(0) scale(1)';e.target.style.opacity='1'}else{e.target.style.transform=presets[i%presets.length];e.target.style.opacity='.88'}}),{threshold:.18});secs.forEach((s,i)=>{s.style.transformOrigin='50% 50%';s.style.transition='transform .9s cubic-bezier(.2,.8,.2,1),opacity .9s';s.style.opacity='.88';s.style.transform=presets[i%presets.length];io.observe(s)});})();
 </script></body></html>
