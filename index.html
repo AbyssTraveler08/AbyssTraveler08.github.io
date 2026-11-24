@@ -684,4 +684,35 @@ load('https://cdnjs.cloudflare.com/ajax/libs/three.js/r152/three.min.js').then((
 })();
 </script><script id="cinematic-section-motion">
 (()=>{if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;const secs=[...document.querySelectorAll('main section')];const presets=['rotateX(5deg) translateY(35px)','translateZ(-70px) rotateY(-6deg)','rotateY(8deg) translateX(40px)','translateZ(60px) rotateX(-4deg)','rotateX(10deg) scale(.94)','translateZ(-40px) rotateY(5deg)','rotateY(-8deg) translateZ(50px)','rotateX(-6deg) translateY(24px)'];const io=new IntersectionObserver(entries=>entries.forEach(e=>{const i=secs.indexOf(e.target);if(e.isIntersecting){e.target.style.transform='translateZ(0) rotateX(0) rotateY(0) scale(1)';e.target.style.opacity='1'}else{e.target.style.transform=presets[i%presets.length];e.target.style.opacity='.88'}}),{threshold:.18});secs.forEach((s,i)=>{s.style.transformOrigin='50% 50%';s.style.transition='transform .9s cubic-bezier(.2,.8,.2,1),opacity .9s';s.style.opacity='.88';s.style.transform=presets[i%presets.length];io.observe(s)});})();
+</script><style id="portfolio-intro-blend">
+/* Unified violet-black atmosphere */
+:root{--scene-bg:#090711;--scene-violet:#7c45ce;--scene-red:#ed3157;--scene-cyan:#67cfff}
+html,body{background:#090711!important}
+body{background-image:radial-gradient(ellipse at 50% 0%,rgba(104,54,160,.23),transparent 52%),radial-gradient(ellipse at 90% 80%,rgba(32,62,120,.13),transparent 42%),linear-gradient(180deg,#090711 0%,#0b0915 48%,#090711 100%)!important}
+#cinematic-scene{opacity:.52;mix-blend-mode:screen;filter:saturate(.76) contrast(.94)}
+.summary-panel{background:linear-gradient(145deg,rgba(12,10,20,.91),rgba(18,12,27,.82))!important;border-color:rgba(151,116,210,.22)!important;box-shadow:0 26px 85px rgba(0,0,0,.36),inset 0 0 55px rgba(111,60,166,.08)!important}
+.summary-panel:before{-webkit-text-stroke-color:rgba(230,71,110,.27)!important}
+.summary-panel:after{background:conic-gradient(from 0deg,transparent 0 72%,rgba(123,98,212,.07),rgba(228,54,92,.045),transparent 88%)!important}
+section,.card,.project-card,.skill-card,.lab-card,.writing-card,.certificate-card{background-color:rgba(15,12,23,.78)}
+/* Welcome intro sequence */
+#portfolio-welcome{position:fixed;inset:0;z-index:99999;display:flex;align-items:center;justify-content:center;overflow:hidden;background:radial-gradient(ellipse at center,rgba(45,28,70,.94),rgba(8,7,14,.98) 66%);color:#f6f0ff;transition:opacity .85s ease,visibility .85s ease}
+#portfolio-welcome.dismissed{opacity:0;visibility:hidden;pointer-events:none}
+#portfolio-welcome:before,#portfolio-welcome:after{content:"";position:absolute;inset:-25%;pointer-events:none}
+#portfolio-welcome:before{background:conic-gradient(from 0deg at 50% 50%,transparent,rgba(132,64,205,.13),transparent,rgba(255,38,82,.08),transparent);animation:intro-orbit 18s linear infinite}
+#portfolio-welcome:after{background:radial-gradient(circle at center,transparent 0 30%,rgba(3,3,9,.32) 72%);mix-blend-mode:multiply}
+@keyframes intro-orbit{to{transform:rotate(360deg)}}
+.welcome-inner{position:relative;z-index:2;text-align:center;padding:28px;max-width:950px}
+.welcome-kicker{font:700 11px/1.4 ui-monospace,monospace;letter-spacing:.42em;color:#a88ce0;text-transform:uppercase;margin-bottom:24px}
+.welcome-line{font-family:Impact,'Arial Black',system-ui,sans-serif;font-size:clamp(25px,5.5vw,64px);font-weight:900;letter-spacing:.015em;line-height:1.1;text-transform:uppercase;display:flex;justify-content:center;flex-wrap:wrap;gap:.22em;text-shadow:0 0 24px rgba(132,66,205,.16)}
+.welcome-word{opacity:0;transform:translateY(30px) rotateX(50deg) scale(.88);display:inline-block;background:linear-gradient(180deg,#fff 0%,#cdb6ff 48%,#8352cb 100%);color:transparent;background-clip:text;-webkit-background-clip:text;-webkit-text-stroke:1px rgba(255,255,255,.12);filter:drop-shadow(0 8px 22px rgba(90,42,153,.24));transition:opacity .7s ease,transform .7s cubic-bezier(.16,.8,.2,1)}
+.welcome-word.visible{opacity:1;transform:translateY(0) rotateX(0) scale(1)}
+.welcome-name{margin-top:18px;font:900 clamp(28px,6vw,72px)/1.1 'Arial Black',Impact,sans-serif;letter-spacing:.03em;color:#ff456a;text-shadow:0 0 20px rgba(255,52,99,.22),0 4px 0 rgba(68,15,37,.5);opacity:0;transform:scale(.96);transition:opacity .9s ease,transform .9s cubic-bezier(.2,.8,.2,1)}
+.welcome-name.visible{opacity:1;transform:scale(1)}
+.welcome-sub{margin-top:25px;font:600 11px ui-monospace,monospace;letter-spacing:.25em;color:rgba(205,191,232,.65);opacity:0;transition:opacity .7s}
+.welcome-sub.visible{opacity:1}
+.welcome-rule{height:1px;width:0;margin:26px auto 0;background:linear-gradient(90deg,transparent,#a36de6,#f24a69,transparent);transition:width 1.1s ease}
+.welcome-rule.visible{width:min(420px,75vw)}
+@media(prefers-reduced-motion:reduce){#portfolio-welcome:before{animation:none}.welcome-word,.welcome-name,.welcome-sub,.welcome-rule{transition:none}}
+</style><div id="portfolio-welcome" role="dialog" aria-label="Welcome to portfolio"><div class="welcome-inner"><div class="welcome-kicker">CYBERSECURITY · SOC · VAPT</div><div class="welcome-line"><span class="welcome-word">WELCOME</span><span class="welcome-word">TO</span><span class="welcome-word">THE</span></div><div class="welcome-name">AMAR KANT YADAV'S PORTFOLIO</div><div class="welcome-sub">INITIALIZING EXPERIENCE&nbsp; · &nbsp;ASSEMBLING INTERFACE</div><div class="welcome-rule"></div></div></div><script id="portfolio-welcome-sequence">
+(()=>{const overlay=document.getElementById('portfolio-welcome');if(!overlay)return;document.documentElement.style.overflow='hidden';document.body.style.overflow='hidden';const words=[...overlay.querySelectorAll('.welcome-word')];const name=overlay.querySelector('.welcome-name'),sub=overlay.querySelector('.welcome-sub'),rule=overlay.querySelector('.welcome-rule');words.forEach((w,i)=>setTimeout(()=>w.classList.add('visible'),350+i*520));setTimeout(()=>name.classList.add('visible'),1900);setTimeout(()=>{sub.classList.add('visible');rule.classList.add('visible')},2550);setTimeout(()=>{overlay.classList.add('dismissed');document.documentElement.style.overflow='';document.body.style.overflow='';setTimeout(()=>overlay.remove(),950)},4800)})();
 </script></body></html>
