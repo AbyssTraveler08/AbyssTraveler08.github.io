@@ -341,9 +341,37 @@ section:hover:before{opacity:.9}
 section:after{animation:ambient-orbit 26s linear infinite}
 @keyframes ambient-orbit{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
 @media(prefers-reduced-motion:reduce){section:after{animation:none!important}}
+/* === Cyberpunk motion pass: glitch, matrix rain, deep perspective ===
+   Existing sections, copy, links and assets intentionally untouched. */
+:root{--cyber-red:#ff304f;--cyber-cyan:#00f0ff;--cyber-green:#00ff9c;--cyber-black:#070b12}
+body{isolation:isolate}
+body:before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;background:linear-gradient(rgba(0,240,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(0,240,255,.035) 1px,transparent 1px);background-size:36px 36px;animation:grid-drift 18s linear infinite}
+body:after{content:"";position:fixed;inset:0;pointer-events:none;z-index:99;background:repeating-linear-gradient(0deg,transparent 0 3px,rgba(0,0,0,.045) 4px 5px);opacity:.16;mix-blend-mode:multiply}
+@keyframes grid-drift{to{background-position:36px 36px}}
+#matrix-rain{position:fixed;inset:0;width:100%;height:100%;z-index:-2;pointer-events:none;opacity:.13}
+h1,h2,h3,.brand{position:relative;transition:color .2s}
+h1:hover,h2:hover{animation:text-glitch .34s steps(2,end) 2}
+@keyframes text-glitch{0%{text-shadow:none;transform:translate(0)}20%{text-shadow:3px 0 var(--cyber-red),-3px 0 var(--cyber-cyan);transform:translate(1px,-1px)}40%{text-shadow:-4px 0 var(--cyber-red),4px 0 var(--cyber-cyan);transform:translate(-2px,1px)}60%{text-shadow:2px 0 var(--cyber-cyan),-2px 0 var(--cyber-red);transform:skewX(1deg)}100%{text-shadow:none;transform:none}}
+.card,.project-card,.certificate-card,.skill-card,.lab-card,.writing-card,.quick-card{transform-style:preserve-3d;will-change:transform;transition:transform .22s ease,box-shadow .28s ease,border-color .28s ease,filter .2s}
+.card:hover,.project-card:hover,.certificate-card:hover,.skill-card:hover,.lab-card:hover,.writing-card:hover,.quick-card:hover{box-shadow:0 25px 55px rgba(0,0,0,.16),0 0 0 1px rgba(0,240,255,.2);border-color:rgba(0,240,255,.4)}
+.cyber-tilt{transform:perspective(900px) rotateX(var(--tilt-x,0deg)) rotateY(var(--tilt-y,0deg)) translateZ(0);transition:transform .12s ease-out}
+.card:hover h3,.project-card:hover h3{ text-shadow:0 0 10px rgba(0,240,255,.22)}
+.btn:hover,.card-link:hover,nav a:hover{ text-shadow:0 0 10px rgba(0,240,255,.3)}
+section{position:relative;overflow:clip}
+section:before{content:"";position:absolute;pointer-events:none;inset:0;background:linear-gradient(115deg,transparent 0%,rgba(0,240,255,.035) 46%,transparent 52%);transform:translateX(-120%);animation:section-scan 9s ease-in-out infinite}
+@keyframes section-scan{0%,65%{transform:translateX(-120%)}100%{transform:translateX(120%)}}
+.motion-reveal{opacity:0;filter:blur(5px);transform:translateY(65px) scale(.96);transition:opacity .8s,transform .85s cubic-bezier(.15,.75,.2,1),filter .8s}
+.motion-reveal.motion-visible{opacity:1;filter:blur(0);transform:translateY(0) scale(1)}
+.motion-reveal[data-motion="left"]{transform:translateX(-75px) rotateY(8deg) scale(.96)}
+.motion-reveal[data-motion="right"]{transform:translateX(75px) rotateY(-8deg) scale(.96)}
+.motion-reveal[data-motion="left"].motion-visible,.motion-reveal[data-motion="right"].motion-visible{transform:translateX(0) rotateY(0) scale(1)}
+@media(max-width:760px){body:before{background-size:26px 26px}#matrix-rain{opacity:.08}.cyber-tilt{transform:none!important}}
+@media(prefers-reduced-motion:reduce){body:before,section:before{animation:none!important}h1:hover,h2:hover{animation:none!important}.motion-reveal{opacity:1!important;filter:none!important;transform:none!important}}
 </style>
 </head>
 <body>
+<canvas id="matrix-rain" aria-hidden="true"></canvas>
+
 <header><div class="wrap nav-wrap"><a class="brand" href="#top">AMAR KANT YADAV <span> / CYBERSECURITY</span></a><nav><a href="#about">About</a><a href="#education">Education</a><a href="#experience">Experience</a><a href="#projects">Projects</a><a href="#skills">Skills</a><a href="#labs">Labs</a><a href="#writing">Writing</a><a href="#certifications">Certifications</a><a href="#contact">Contact</a></nav></div></header>
 <main id="top">
 <div class="wrap intro summary-intro">
@@ -522,5 +550,24 @@ section:after{animation:ambient-orbit 26s linear infinite}
  if(!window.IntersectionObserver){items.forEach(function(el){el.classList.add('motion-visible');});return;}
  var observer=new IntersectionObserver(function(entries){entries.forEach(function(entry){if(entry.isIntersecting){entry.target.classList.add('motion-visible');observer.unobserve(entry.target);}});},{threshold:.08,rootMargin:'0px 0px -25px 0px'});
  items.forEach(function(el){observer.observe(el);});
+})();
+</script><script>
+(function(){
+ const canvas=document.getElementById('matrix-rain'),ctx=canvas&&canvas.getContext('2d');
+ if(ctx&&!matchMedia('(prefers-reduced-motion: reduce)').matches){
+  let w,h,cols,drops,fs=14;
+  function resize(){w=canvas.width=innerWidth;h=canvas.height=innerHeight;cols=Math.ceil(w/fs);drops=Array(cols).fill(1)}
+  resize();addEventListener('resize',resize,{passive:true});
+  const glyph='01アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワン';
+  function draw(){ctx.fillStyle='rgba(7,11,18,.075)';ctx.fillRect(0,0,w,h);ctx.font=fs+'px monospace';for(let i=0;i<drops.length;i++){const t=glyph[Math.floor(Math.random()*glyph.length)];ctx.fillStyle=Math.random()>.975?'#ff304f':'#00ff9c';ctx.fillText(t,i*fs,drops[i]*fs);if(drops[i]*fs>h&&Math.random()>.975)drops[i]=0;drops[i]++}requestAnimationFrame(draw)}
+  ctx.fillStyle='#070b12';ctx.fillRect(0,0,w,h);draw();
+ }
+ if(matchMedia('(hover:hover) and (pointer:fine)').matches){
+  document.querySelectorAll('.card,.project-card,.certificate-card,.skill-card,.lab-card,.writing-card,.quick-card').forEach(el=>{
+   el.classList.add('cyber-tilt');
+   el.addEventListener('mousemove',e=>{const r=el.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;el.style.setProperty('--tilt-x',(-y*12).toFixed(2)+'deg');el.style.setProperty('--tilt-y',(x*14).toFixed(2)+'deg');el.style.transform='perspective(900px) rotateX('+(-y*12)+'deg) rotateY('+(x*14)+'deg) translateZ(7px)'});
+   el.addEventListener('mouseleave',()=>{el.style.transform='';el.style.removeProperty('--tilt-x');el.style.removeProperty('--tilt-y')});
+  });
+ }
 })();
 </script></body></html>
